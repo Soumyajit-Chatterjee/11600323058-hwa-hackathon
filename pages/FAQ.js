@@ -45,8 +45,10 @@ export function FAQ({ onRoute }) {
 
     trigger.addEventListener('click', () => {
       const isOpen = faqItem.getAttribute('data-open') === 'true';
+      const toggle = trigger.querySelector('.faq-toggle');
       faqItem.setAttribute('data-open', String(!isOpen));
       trigger.setAttribute('aria-expanded', String(!isOpen));
+      toggle.textContent = !isOpen ? '−' : '+';
       if (!isOpen) {
         answer.removeAttribute('hidden');
       } else {
