@@ -380,7 +380,7 @@ button {
 
 .hero-body {
   font-size: 1rem;
-  color: #333;
+  color: var(--color-text-light);
   margin: 0;
   line-height: 1.7;
 }
@@ -493,7 +493,7 @@ button {
 .product-card.highlighted .sub-tag,
 .product-card:hover .sub-tag {
   border-color: var(--color-accent);
-  color: var(--color-accent);
+  color: var(--color-text-dark);
 }
 
 /* Ribbon badge (permanent above featured kit) */

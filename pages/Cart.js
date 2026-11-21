@@ -66,7 +66,7 @@ export function Cart({ onRoute }) {
         <div class="cart-item-info">
           <p class="cart-item-name">${item.name}</p>
           <p class="cart-item-variant">${item.variant}</p>
-          <p class="cart-item-price">₹${item.price.toLocaleString()}</p>
+          <p class="cart-item-price">₹${(item.salePrice || item.price).toLocaleString()}</p>
         </div>
         <div class="cart-item-controls">
           <button type="button" class="qty-btn qty--minus" data-id="${item.id}" aria-label="Decrease ${item.name}">−</button>

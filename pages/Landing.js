@@ -3,14 +3,12 @@ import { products, brandConfig } from '../data/products.js';
 import { faqs } from '../data/faq.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 import { Button } from '../components/Button.js';
-import { ProductCard } from '../components/ProductCard.js';
 
 export function Landing({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page landing';
 
   const starter = products.find((p) => p.id === 'starter');
-  const refill = products.find((p) => p.id === 'refill');
 
   // --- 1. Hero: badge + headline + one-sentence promise + buttons + visual ---
   const hero = document.createElement('section');
@@ -203,25 +201,7 @@ export function Landing({ onRoute }) {
     materialsList.appendChild(li);
   });
 
-  // --- 8. Starter kit and refill pack ---
-  const kitsStrip = document.createElement('section');
-  kitsStrip.className = 'kits-strip';
-  kitsStrip.innerHTML = `
-    <div class="container">
-      <header class="section-header page-header">
-        <h2 class="section-title">Choose your kit</h2>
-      </header>
-      <div class="kits-grid" aria-label="Kits"></div>
-    </div>
-  `;
-
-  const kitsGrid = kitsStrip.querySelector('.kits-grid');
-  [starter, refill].forEach((p) => {
-    const card = ProductCard({ product: p, onSelect: () => onRoute(`#/product/${p.id}`) });
-    kitsGrid.appendChild(card);
-  });
-
-  // --- 9. FAQ (accordion, 5 questions) ---
+  // --- 8. FAQ (accordion, 5 questions) ---
   const faqStrip = document.createElement('section');
   faqStrip.id = 'faq';
   faqStrip.className = 'faq-strip';
@@ -300,7 +280,6 @@ export function Landing({ onRoute }) {
   section.appendChild(chambersStrip);
   section.appendChild(timelineStrip);
   section.appendChild(materialsStrip);
-  section.appendChild(kitsStrip);
   section.appendChild(faqStrip);
   section.appendChild(ctaStrip);
 

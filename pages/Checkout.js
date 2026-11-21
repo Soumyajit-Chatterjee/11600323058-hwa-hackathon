@@ -71,7 +71,7 @@ export function Checkout({ onRoute }) {
     row.innerHTML = `
       <span class="review-name">${item.name} — ${item.variant}</span>
       <span class="review-qty">×${item.qty}</span>
-      <span class="review-price">₹${(item.price * item.qty).toLocaleString()}</span>
+      <span class="review-price">₹${((item.salePrice || item.price) * item.qty).toLocaleString()}</span>
     `;
     reviewItems.appendChild(row);
   });

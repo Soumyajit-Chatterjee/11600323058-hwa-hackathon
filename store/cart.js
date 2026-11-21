@@ -34,6 +34,7 @@ export const cart = {
         productId,
         name: product ? product.name : 'Item',
         price: product ? product.price : 0,
+        salePrice: product && product.salePrice && product.salePrice < product.price ? product.salePrice : null,
         variant,
         qty,
         imageDesc: product ? product.image.desc : 'Product image placeholder',
@@ -70,7 +71,7 @@ export const cart = {
   },
 
   getTotal() {
-    return items.reduce((sum, i) => sum + i.price * i.qty, 0);
+    return items.reduce((sum, i) => sum + (i.salePrice || i.price) * i.qty, 0);
   },
 
   getItems() {

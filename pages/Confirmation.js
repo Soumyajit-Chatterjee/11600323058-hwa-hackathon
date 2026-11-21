@@ -64,7 +64,7 @@ export function Confirmation({ orderId, onRoute }) {
   const itemsList = section.querySelector('.confirmation-items');
   match.items.forEach((item) => {
     const li = document.createElement('li');
-    li.textContent = `${item.name} — ${item.variant} ×${item.qty} · ₹${(item.price * item.qty).toLocaleString()}`;
+    li.textContent = `${item.name} — ${item.variant} ×${item.qty} · ₹${((item.salePrice || item.price) * item.qty).toLocaleString()}`;
     itemsList.appendChild(li);
   });
 
