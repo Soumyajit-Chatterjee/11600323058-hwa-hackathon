@@ -1,22 +1,26 @@
-/* ChronoScent — Landing page (hero + how it works + strips) */
+/* ChronoScent — Landing page */
 import { products, brandConfig } from '../data/products.js';
+import { faqs } from '../data/faq.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 import { Button } from '../components/Button.js';
+import { ProductCard } from '../components/ProductCard.js';
 
 export function Landing({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page landing';
 
   const starter = products.find((p) => p.id === 'starter');
+  const refill = products.find((p) => p.id === 'refill');
 
-  // --- Hero: badge + headline + buttons + visual ---
+  // --- 1. Hero: badge + headline + one-sentence promise + buttons + visual ---
   const hero = document.createElement('section');
   hero.className = 'hero';
   hero.innerHTML = `
     <div class="container hero-inner">
       <div class="hero-content">
         <span class="badge">Purely mechanical · No batteries · No Wi-Fi</span>
-        <h1 class="hero-headline">A dual-chamber chew pod for dogs left at home</h1>
+        <h1 class="hero-headline">ChronoScent — a dual-chamber chew pod for dogs left at home</h1>
+        <p class="hero-body">Keeps your dog engaged through chew, scent, warmth, and delayed reward — no Wi-Fi, batteries, cameras, or owner interaction needed after setup.</p>
         <div class="hero-actions"></div>
       </div>
       <div class="hero-visual"></div>
@@ -24,7 +28,7 @@ export function Landing({ onRoute }) {
   `;
 
   const actions = hero.querySelector('.hero-actions');
-  const shopBtn = Button({ text: 'Choose a kit', variant: 'primary', onClick: () => onRoute('#/shop') });
+  const shopBtn = Button({ text: 'View starter kit', variant: 'primary', onClick: () => onRoute('#/shop') });
   const howBtn = Button({ text: 'How it works', variant: 'outline', onClick: () => {
     onRoute('#/');
     setTimeout(() => {
@@ -53,7 +57,7 @@ export function Landing({ onRoute }) {
   );
   visual.appendChild(heroImg);
 
-  // --- Subheading strip ---
+  // --- 2. Subheading strip (tagline) ---
   const subheadingStrip = document.createElement('section');
   subheadingStrip.className = 'subheading-strip';
   subheadingStrip.innerHTML = `
@@ -62,14 +66,29 @@ export function Landing({ onRoute }) {
     </div>
   `;
 
-  // --- How it works: title + steps grid ---
+  // --- 3. Why ordinary single stage toys lose attention ---
+  const whyStrip = document.createElement('section');
+  whyStrip.className = 'why-strip';
+  whyStrip.innerHTML = `
+    <div class="container">
+      <div class="why-inner">
+        <header class="why-header">
+          <h2 class="section-title">Why ordinary single stage toys lose attention</h2>
+        </header>
+        <p class="hero-body">Single stage chew toys offer one experience: a dog chews, the treat is gone, and the toy is done. Once solved, there is nothing left to return to, so interest fades quickly.</p>
+      </div>
+    </div>
+  `;
+
+  // --- 4. How ChronoScent works ---
   const how = document.createElement('section');
   how.id = 'how-it-works';
   how.className = 'how-it-works';
   how.innerHTML = `
     <div class="container">
-      <header class="section-header">
-        <h2 class="section-title">How it works</h2>
+      <header class="section-header page-header">
+        <h2 class="section-title">How ChronoScent works</h2>
+        <p class="section-intro">A sequence of chew, scent, warmth, and delayed reward keeps your dog engaged over time.</p>
       </header>
       <div class="steps-grid"></div>
     </div>
@@ -79,22 +98,22 @@ export function Landing({ onRoute }) {
     {
       num: 1,
       title: 'Load',
-      text: 'Load the timed treat chamber. The staged release mechanism keeps food dispensing over time, so your dog stays engaged without batteries or app control.'
+      text: 'Load the timed treat chamber. The staged release mechanism dispenses food over time without batteries or app control.'
     },
     {
       num: 2,
       title: 'Scent',
-      text: 'Insert a cotton scent strip with your worn clothing and the removable PCM warming disc into the separate warmth chamber. Your dog returns to familiar scent and gentle warmth between chew sessions.'
+      text: 'Insert a cotton scent strip with your worn clothing into the separate warmth chamber. Familiar scent is there between chew sessions.'
     },
     {
       num: 3,
       title: 'Chew',
-      text: 'Heavy duty, capsule shaped chew pod with two isolated systems. Modular chambers rearrange as your dog improves.'
+      text: 'Heavy duty capsule shaped chew pod with two isolated chambers. Modular chambers rearrange as your dog improves.'
     },
     {
       num: 4,
       title: 'Settle',
-      text: 'Between cycles, your dog settles into the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.'
+      text: 'Between cycles, your dog returns to the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.'
     }
   ];
 
@@ -110,19 +129,180 @@ export function Landing({ onRoute }) {
     grid.appendChild(step);
   });
 
-  // --- Body text strip ---
-  const bodyStrip = document.createElement('section');
-  bodyStrip.className = 'body-strip';
-  bodyStrip.innerHTML = `
-    <div class="container body-strip-container">
-      <p class="hero-body">Load the treat chamber. Insert the scent strip. Set the cycle. No batteries, Wi-Fi or live check-ins required.</p>
+  // --- 5. The two isolated chambers ---
+  const chambersStrip = document.createElement('section');
+  chambersStrip.className = 'chambers-strip';
+  chambersStrip.innerHTML = `
+    <div class="container">
+      <header class="section-header page-header">
+        <h2 class="section-title">Two isolated chambers</h2>
+      </header>
+      <div class="chambers-grid">
+        <div class="chamber-card card">
+          <h3 class="card-title">Timed treat chamber</h3>
+          <p class="card-desc">Staged food release keeps your dog working for rewards over time. Edible treat cartridges are replaceable.</p>
+        </div>
+        <div class="chamber-card card">
+          <h3 class="card-title">Warmth & scent chamber</h3>
+          <p class="card-desc">Removable PCM warming disc and cotton scent strip hold your scent. Your dog returns to warmth and familiarity between chews.</p>
+        </div>
+      </div>
     </div>
   `;
 
+  // --- 6. Timeline: early, middle, later engagement ---
+  const timelineStrip = document.createElement('section');
+  timelineStrip.className = 'timeline-strip';
+  timelineStrip.innerHTML = `
+    <div class="container">
+      <header class="section-header page-header">
+        <h2 class="section-title">Engagement over time</h2>
+      </header>
+      <div class="timeline-grid">
+        <div class="timeline-item card">
+          <h3 class="card-title">Early</h3>
+          <p class="card-desc">Your dog discovers the chew base and first treat release.</p>
+        </div>
+        <div class="timeline-item card">
+          <h3 class="card-title">Middle</h3>
+          <p class="card-desc">Scent strip and warming disc provide a familiar resting point between chew sessions.</p>
+        </div>
+        <div class="timeline-item card">
+          <h3 class="card-title">Later</h3>
+          <p class="card-desc">Staged treat release and rearrangeable chambers keep the experience fresh as your dog improves.</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // --- 7. Materials and safety overview ---
+  const materialsStrip = document.createElement('section');
+  materialsStrip.className = 'materials-strip';
+  materialsStrip.innerHTML = `
+    <div class="container">
+      <header class="section-header page-header">
+        <h2 class="section-title">Materials & safety</h2>
+      </header>
+      <div class="materials-safety-grid">
+        <div class="materials-list card">
+          <h3 class="card-title">Materials</h3>
+          <ul class="includes-list"></ul>
+        </div>
+        <div class="safety-note card">
+          <h3 class="card-title">Safety & care</h3>
+          <p class="card-desc">${starter.safetyNotes}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const materialsList = materialsStrip.querySelector('.includes-list');
+  starter.materials.forEach((mat) => {
+    const li = document.createElement('li');
+    li.textContent = mat;
+    materialsList.appendChild(li);
+  });
+
+  // --- 8. Starter kit and refill pack ---
+  const kitsStrip = document.createElement('section');
+  kitsStrip.className = 'kits-strip';
+  kitsStrip.innerHTML = `
+    <div class="container">
+      <header class="section-header page-header">
+        <h2 class="section-title">Choose your kit</h2>
+      </header>
+      <div class="kits-grid" aria-label="Kits"></div>
+    </div>
+  `;
+
+  const kitsGrid = kitsStrip.querySelector('.kits-grid');
+  [starter, refill].forEach((p) => {
+    const card = ProductCard({ product: p, onSelect: () => onRoute(`#/product/${p.id}`) });
+    kitsGrid.appendChild(card);
+  });
+
+  // --- 9. FAQ (accordion, 5 questions) ---
+  const faqStrip = document.createElement('section');
+  faqStrip.id = 'faq';
+  faqStrip.className = 'faq-strip';
+  faqStrip.innerHTML = `
+    <div class="container">
+      <header class="section-header page-header">
+        <h2 class="section-title">Frequently asked questions</h2>
+      </header>
+      <div class="faq-accordion" aria-label="FAQs"></div>
+    </div>
+  `;
+
+  const faqAccordion = faqStrip.querySelector('.faq-accordion');
+  faqs.slice(0, 5).forEach((item, index) => {
+    const faqItem = document.createElement('div');
+    faqItem.className = 'faq-item';
+    faqItem.setAttribute('data-open', 'false');
+
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'faq-question';
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', `faq-answer-${index}`);
+    trigger.innerHTML = `
+      <span class="faq-q">${item.q}</span>
+      <span class="faq-toggle" aria-hidden="true">+</span>
+    `;
+
+    const answer = document.createElement('div');
+    answer.className = 'faq-answer';
+    answer.id = `faq-answer-${index}`;
+    answer.setAttribute('hidden', 'true');
+    answer.innerHTML = `<p class="faq-a">${item.a}</p>`;
+
+    trigger.addEventListener('click', () => {
+      const isOpen = faqItem.getAttribute('data-open') === 'true';
+      const toggle = trigger.querySelector('.faq-toggle');
+      faqItem.setAttribute('data-open', String(!isOpen));
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      toggle.textContent = !isOpen ? '−' : '+';
+      if (!isOpen) {
+        answer.removeAttribute('hidden');
+      } else {
+        answer.setAttribute('hidden', 'true');
+      }
+    });
+
+    faqItem.appendChild(trigger);
+    faqItem.appendChild(answer);
+    faqAccordion.appendChild(faqItem);
+  });
+
+  // --- 10. Call to action ---
+  const ctaStrip = document.createElement('section');
+  ctaStrip.className = 'cta-strip';
+  ctaStrip.innerHTML = `
+    <div class="container">
+      <div class="cta-content card">
+        <h2 class="section-title">Ready to try ChronoScent?</h2>
+        <p class="hero-body">Choose the Starter Kit or subscribe to the Refill Pack. No batteries, Wi-Fi, or app required.</p>
+        <div class="cta-actions"></div>
+      </div>
+    </div>
+  `;
+
+  const ctaActions = ctaStrip.querySelector('.cta-actions');
+  const viewShopBtn = Button({ text: 'View starter kit', variant: 'primary', onClick: () => onRoute('#/shop') });
+  const viewRefillBtn = Button({ text: 'View refill pack', variant: 'outline', onClick: () => onRoute('#/product/refill') });
+  ctaActions.appendChild(viewShopBtn);
+  ctaActions.appendChild(viewRefillBtn);
+
   section.appendChild(hero);
   section.appendChild(subheadingStrip);
+  section.appendChild(whyStrip);
   section.appendChild(how);
-  section.appendChild(bodyStrip);
+  section.appendChild(chambersStrip);
+  section.appendChild(timelineStrip);
+  section.appendChild(materialsStrip);
+  section.appendChild(kitsStrip);
+  section.appendChild(faqStrip);
+  section.appendChild(ctaStrip);
 
   return { el: section };
 }
