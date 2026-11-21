@@ -2,8 +2,8 @@
 /* All prices, descriptions, included items, materials, suitability and safety notes
    are defined here. Components and pages read from this file only. */
 /*
-   CONCEPT DISCLAIMER:
-   ChronoScent is a concept product. Real-world timing, durability, and safety have
+   DISCLAIMER:
+   ChronoScent is a design proposal. Real-world timing, durability, and safety have
    not been independently verified. Physical testing and veterinary or product safety
    review are required before use. Actual release time can vary by dog chewing strength,
    cartridge formulation, temperature, and environment. Not a medical device. Not an
@@ -18,7 +18,7 @@ export const siteImages = {
     src: 'assets/Homepage_Hero_500x520.png',
     w: 1264,
     h: 1264,
-    desc: 'ChronoScent dual-chamber chew pod concept with a navy moulded rubber base, amber warming disc, cotton scent strips and brown treat cartridges',
+    desc: 'ChronoScent dual-chamber chew pod with a navy moulded rubber base, amber warming disc, cotton scent strips and brown treat cartridges',
   },
   starterShop: {
     src: 'assets/StarterKit_Shop_Card_500x500.png',
@@ -42,25 +42,25 @@ export const siteImages = {
     src: 'assets/DualChamber_Cutaway_500x500.png',
     w: 1264,
     h: 1264,
-    desc: 'ChronoScent dual-chamber cutaway concept showing separate treat and warmth/scent compartments inside a navy moulded outer body',
+    desc: 'ChronoScent dual-chamber cutaway showing separate treat and warmth/scent compartments inside a navy moulded outer body',
   },
   thermoScentCore: {
     src: 'assets/Thermo_Scent_Core_500x500.png',
     w: 1264,
     h: 1264,
-    desc: 'Thermo-Scent core concept showing a cream ceramic diffuser cage with a cotton scent insert and removable base',
+    desc: 'Thermo-Scent core showing a cream ceramic diffuser cage with a cotton scent insert and removable base',
   },
   chronoTreatChamber: {
     src: 'assets/Chrono_Treat_Chamber_500x500.png',
     w: 1264,
     h: 1264,
-    desc: 'Chrono-Treat chamber concept showing a clear amber treat cartridge partly removed from the navy chew pod',
+    desc: 'Chrono-Treat chamber showing a clear amber treat cartridge partly removed from the navy chew pod',
   },
   timedTreatCartridges: {
     src: 'assets/Timed_Treat_Cartridges_500x500.png',
     w: 1264,
     h: 1264,
-    desc: 'ChronoScent timed treat cartridge concept showing assorted edible treat portions in clear protective trays',
+    desc: 'ChronoScent timed treat cartridge showing assorted edible treat portions in clear protective trays',
   },
 };
 
@@ -74,10 +74,10 @@ export const products = [
     salePrice: 2399,
     saleLabel: 'Limited time',
     originalPriceLabel: 'Ongoing discount',
-    summary: 'Concept chew pod for dogs beginning timed chew routines.',
+    summary: 'Chew pod for dogs beginning timed chew routines.',
     description:
-      'Concept design for a capsule shaped chew base with two isolated systems: a timed treat chamber concept for staged food release, and a separate warmth/scent chamber concept with a removable PCM warming disc and cotton scent strip. A battery free enrichment concept that combines chewing, delayed rewards, warmth and familiar scent. Not a medical or anti anxiety device. Not a guaranteed calming product. Real-world timing, durability, and safety require physical testing and veterinary or product safety review.',
-    shortDesc: 'Dual chamber modular chew pod concept for dogs left alone at home.',
+      'Design for a capsule shaped chew base with two isolated systems: a timed treat chamber for staged food release, and a separate warmth/scent chamber with a removable PCM warming disc and cotton scent strip. A battery free enrichment design that combines chewing, delayed rewards, warmth and familiar scent. Not a medical or anti anxiety device. Not a guaranteed calming product. Real-world timing, durability, and safety require physical testing and veterinary or product safety review.',
+    shortDesc: 'Dual chamber modular chew pod for dogs left alone at home.',
     includes: [
       '1 ChronoScent chew base',
       '1 PCM warming disc',
@@ -124,7 +124,7 @@ export const products = [
       cartridgeFormulations: 'Standard cartridges suit light and moderate chewers. Endurance cartridges are denser and made for heavy chewers who wear through standard cartridges faster. Match the formulation to your dog\'s chewing strength.',
       timeline: {
         title: 'Intended engagement timeline',
-        disclaimer: 'This is an intended design concept, not a guaranteed schedule. Actual release time can vary by dog chewing strength, cartridge formulation, temperature, and environment. Physical testing required.',
+        disclaimer: 'This is an intended design proposal, not a guaranteed schedule. Actual release time can vary by dog chewing strength, cartridge formulation, temperature, and environment. Physical testing required.',
         stages: [
           {
             title: 'Start',
@@ -211,5 +211,5 @@ export const brandConfig = {
   name: 'ChronoScent',
   tagline: 'Scent + timing. No batteries. No Wi-Fi. No app.',
   footerNote:
-    'ChronoScent is a purely mechanical timed chew concept. Not a treat cam. Not a puzzle your dog solves once. Real-world timing, durability, and safety require physical testing and veterinary or product safety review. Not a medical or anti-anxiety device.'
+    'ChronoScent is a purely mechanical timed chew design. Not a treat cam. Not a puzzle your dog solves once. Real-world timing, durability, and safety require physical testing and veterinary or product safety review. Not a medical or anti-anxiety device.'
 };

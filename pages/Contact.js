@@ -8,14 +8,14 @@ export function Contact({ onRoute }) {
       <header class="page-head" data-reveal>
         <p class="eyebrow">Get in touch</p>
         <h1 class="section-title">Contact Us</h1>
-        <p class="section-intro">Questions about the ChronoScent concept? Send a note below.</p>
+        <p class="section-intro">Questions about ChronoScent? Send a note below.</p>
       </header>
 
       <div class="contact-wrap">
         <div class="contact-info">
           <div class="contact-card" data-reveal>
-            <h3>Concept store</h3>
-            <p>ChronoScent is a concept product. This storefront is a demonstration, not a live shop.</p>
+            <h3>Demo storefront</h3>
+            <p>This storefront is a demonstration, not a live shop.</p>
           </div>
           <div class="contact-card" data-reveal style="--reveal-delay: 70ms">
             <h3>Orders &amp; support</h3>
@@ -93,7 +93,7 @@ export function Contact({ onRoute }) {
     }
 
     form.reset();
-    statusEl.textContent = 'Thanks — your message was saved on this device. This concept store has no live support desk yet.';
+    statusEl.textContent = 'Thanks — your message was saved on this device. This demo storefront has no live support desk yet.';
   });
 
   section.addEventListener('click', (e) => {

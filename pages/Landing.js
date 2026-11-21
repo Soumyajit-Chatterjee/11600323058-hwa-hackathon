@@ -16,10 +16,10 @@ export function Landing({ onRoute }) {
   hero.innerHTML = `
     <div class="container hero-inner">
       <div class="hero-content">
-        <span class="badge">Concept · No batteries · No Wi-Fi</span>
+        <span class="badge">No batteries · No Wi-Fi · No app</span>
         <h1 class="hero-headline">ChronoScent</h1>
-        <p class="hero-subtitle">"a dual-chamber chew pod concept for dogs left at home"</p>
-        <p class="hero-body">Designed to engage your dog through chew, scent, warmth, and delayed reward — no Wi-Fi, batteries, cameras, or owner interaction needed after setup. Concept product — real-world timing, durability, and safety require physical testing and veterinary review.</p>
+        <p class="hero-subtitle">"a dual-chamber chew pod for dogs left at home"</p>
+        <p class="hero-body">Designed to engage your dog through chew, scent, warmth, and delayed reward — no Wi-Fi, batteries, cameras, or owner interaction needed after setup. Real-world timing, durability, and safety require physical testing and veterinary review.</p>
         <div class="hero-actions"></div>
       </div>
       <div class="hero-visual"></div>
@@ -88,7 +88,7 @@ export function Landing({ onRoute }) {
     <div class="container">
       <header class="section-header" data-reveal>
         <h2 class="section-title">How ChronoScent works</h2>
-        <p class="section-intro">A concept sequence of chew, scent, warmth, and delayed reward intended to keep your dog engaged over time.</p>
+        <p class="section-intro">A sequence of chew, scent, warmth, and delayed reward intended to keep your dog engaged over time.</p>
       </header>
       <div class="steps-grid"></div>
     </div>
@@ -98,22 +98,22 @@ export function Landing({ onRoute }) {
     {
       num: 1,
       title: 'Load',
-      text: 'Concept: load the timed treat chamber. The staged release mechanism is intended to dispense food over time without batteries or app control.'
+      text: 'Load the timed treat chamber. The staged release mechanism is intended to dispense food over time without batteries or app control.'
     },
     {
       num: 2,
       title: 'Scent',
-      text: 'Concept: insert a cotton scent strip with your worn clothing into the separate warmth chamber. Familiar scent intended to be there between chew sessions.'
+      text: 'Insert a cotton scent strip with your worn clothing into the separate warmth chamber. Familiar scent is there between chew sessions.'
     },
     {
       num: 3,
       title: 'Chew',
-      text: 'Concept: heavy duty capsule shaped chew pod with two isolated chambers. Modular chambers rearrange as your dog improves.'
+      text: 'Heavy duty capsule shaped chew pod with two isolated chambers. Modular chambers rearrange as your dog improves.'
     },
     {
       num: 4,
       title: 'Settle',
-      text: 'Concept: between cycles, your dog returns to the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.'
+      text: 'Between cycles, your dog returns to the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.'
     }
   ];
 

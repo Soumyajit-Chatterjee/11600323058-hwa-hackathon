@@ -86,7 +86,7 @@ export function Cart({ onRoute }) {
             <path d="M9 7V5.5a3 3 0 0 1 6 0V7"></path>
           </svg>
           <p>Your cart is empty.</p>
-          <p>Browse the concept kits to get started.</p>
+          <p>Browse the kits to get started.</p>
           <p class="btn-container"><button type="button" class="btn btn--primary" id="empty-shop">Shop now</button></p>
         </div>
       `;

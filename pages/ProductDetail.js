@@ -178,7 +178,7 @@ export function ProductDetail({ id, onRoute }) {
         <div class="product-safety-panel" data-reveal>
           <h3>Important safety information</h3>
           <ul class="safety-list">
-            <li>ChronoScent is a concept product. Introduce it to your dog under supervision during the first few sessions.</li>
+            <li>Introduce ChronoScent to your dog under supervision during the first few sessions.</li>
             <li>Inspect the base, cartridges, warming disc, and scent strip before every use.</li>
             <li>Replace any component that shows tears, cracks, or damage immediately.</li>
             <li>Base your choice of Standard or Endurance cartridges on your own dog’s chewing behaviour and strength.</li>

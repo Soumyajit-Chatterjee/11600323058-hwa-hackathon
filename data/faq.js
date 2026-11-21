@@ -2,19 +2,19 @@
 export const faqs = [
   {
     q: 'What is ChronoScent made from?',
-    a: 'Concept materials: food grade rubber or TPR outer body with a sealed PCM disc, silicon diffuser cage, porous ceramic insert, cotton scent strips and edible treat cartridges. Real-world material safety requires physical testing and veterinary review.'
+    a: 'Materials: food grade rubber or TPR outer body with a sealed PCM disc, silicon diffuser cage, porous ceramic insert, cotton scent strips and edible treat cartridges. Real-world material safety requires physical testing and veterinary review.'
   },
   {
     q: 'Is the base dishwasher safe?',
-    a: 'Concept: the hard base unit is dishwasher safe on the top rack. Remove the scent cartridges, PCM warming disc and cotton scent strip before washing. Real-world durability requires physical testing.'
+    a: 'The hard base unit is dishwasher safe on the top rack. Remove the scent cartridges, PCM warming disc and cotton scent strip before washing. Real-world durability requires physical testing.'
   },
   {
     q: 'Does it use batteries, Wi-Fi, or an app?',
-    a: 'No. ChronoScent is a purely mechanical concept, and the timed release, warming disc and scent strip require no app, battery, or internet connection.'
+    a: 'No. ChronoScent is purely mechanical, and the timed release, warming disc and scent strip require no app, battery, or internet connection.'
   },
   {
     q: 'How does the treat release work?',
-    a: 'Concept: the timed treat chamber uses a staged release mechanism intended to dispense food over time, so your dog stays engaged without batteries or app control. Actual release time varies by chewing strength, cartridge formulation, temperature, and environment.'
+    a: 'The timed treat chamber uses a staged release mechanism intended to dispense food over time, so your dog stays engaged without batteries or app control. Actual release time varies by chewing strength, cartridge formulation, temperature, and environment.'
   },
   {
     q: 'Can two pets use it together?',
@@ -22,14 +22,14 @@ export const faqs = [
   },
   {
     q: 'What if my pet is not treat motivated?',
-    a: 'Concept: use a favourite toy, safe chew, or a small amount of a high-value reward instead of ordinary treats. The scent strip and warming disc can also provide interest without relying entirely on food.'
+    a: 'Use a favourite toy, safe chew, or a small amount of a high-value reward instead of ordinary treats. The scent strip and warming disc can also provide interest without relying entirely on food.'
   },
   {
     q: 'Is it safe to leave my pet alone with it?',
-    a: 'Concept product — check the base and cartridges during initial sessions to make sure your pet does not tear, swallow, or aggressively chew any part. Remove damaged components and follow your veterinarian’s advice for your pet’s chewing habits. Real-world safety requires physical testing and veterinary review.'
+    a: 'Check the base and cartridges during initial sessions to make sure your pet does not tear, swallow, or aggressively chew any part. Remove damaged components and follow your veterinarian’s advice for your pet’s chewing habits. Real-world safety requires physical testing and veterinary review.'
   },
   {
     q: 'Is the scent strip safe?',
-    a: 'Concept: use only the supplied cotton scent strip and PCM warming disc. Keep them enclosed or out of reach when not in use. They are not for chewing or ingestion. Real-world safety requires physical testing and veterinary review.'
+    a: 'Use only the supplied cotton scent strip and PCM warming disc. Keep them enclosed or out of reach when not in use. They are not for chewing or ingestion. Real-world safety requires physical testing and veterinary review.'
   }
 ];
