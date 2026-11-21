@@ -1649,6 +1649,10 @@ button {
   margin-bottom: 16px;
 }
 
+.why-strip .hero-body {
+  color: var(--color-text-dark);
+}
+
 .chambers-strip {
   padding: 56px 0;
   background: var(--color-dark);
