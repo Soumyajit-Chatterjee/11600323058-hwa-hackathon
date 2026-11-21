@@ -301,6 +301,14 @@ button {
   margin-bottom: 32px;
 }
 
+.hero-subtitle {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
 .hero-actions {
   display: flex;
   gap: 12px;

@@ -17,7 +17,8 @@ export function Landing({ onRoute }) {
     <div class="container hero-inner">
       <div class="hero-content">
         <span class="badge">Concept · No batteries · No Wi-Fi</span>
-        <h1 class="hero-headline">ChronoScent — a dual-chamber chew pod concept for dogs left at home</h1>
+        <h1 class="hero-headline">ChronoScent</h1>
+        <p class="hero-subtitle">"a dual-chamber chew pod concept for dogs left at home"</p>
         <p class="hero-body">Designed to engage your dog through chew, scent, warmth, and delayed reward — no Wi-Fi, batteries, cameras, or owner interaction needed after setup. Concept product — real-world timing, durability, and safety require physical testing and veterinary review.</p>
         <div class="hero-actions"></div>
       </div>
