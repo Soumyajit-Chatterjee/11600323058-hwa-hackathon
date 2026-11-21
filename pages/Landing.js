@@ -45,9 +45,12 @@ export function Landing({ onRoute }) {
       src: 'assets/Home_Page_Main_Image_500x520.png',
     })
   );
-  const caption = document.createElement('p');
-  caption.className = 'visual-caption';
-  caption.textContent = 'Base den, scent pods, and trail sachets.';
+  const caption = document.createElement('div');
+  caption.className = 'visual-caption paw-caption';
+  caption.innerHTML = `
+    <div class="paw-arrow">▲</div>
+    <div class="paw-pad">Base den, scent pods, and trail sachets.</div>
+  `;
   visual.appendChild(heroImg);
   visual.appendChild(caption);
 
