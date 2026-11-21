@@ -31,7 +31,17 @@ export function ProductDetail({ id, onRoute }) {
     <div class="container product-container">
       <div class="product-gallery">
         <div class="gallery-placeholder">
-          ${PlaceholderImg({ w: 420, h: 560, desc: product.image.desc, className: 'gallery-img', src: product.image.gallerySrc, loading: 'lazy', decoding: 'async' }).outerHTML}
+          ${PlaceholderImg({
+            w: product.image.galleryW || product.image.w,
+            h: product.image.galleryH || product.image.h,
+            desc: product.image.galleryDesc || product.image.desc,
+            className: 'gallery-img',
+            src: product.image.gallerySrc || product.image.src,
+            loading: 'eager',
+            decoding: 'async',
+            fit: 'contain',
+            fetchPriority: 'high'
+          }).outerHTML}
         </div>
       </div>
       <div class="product-info">
@@ -131,6 +141,7 @@ export function ProductDetail({ id, onRoute }) {
             <p class="card-desc">${product.details.cartridgeFormulations}</p>
           </div>
 
+          ${product.details.timeline ? `
           <div class="timeline-section card">
             <h3 class="card-title">${product.details.timeline.title}</h3>
             <p class="card-desc timeline-disclaimer">${product.details.timeline.disclaimer}</p>
@@ -140,14 +151,14 @@ export function ProductDetail({ id, onRoute }) {
                   <h4 class="stage-title">${stage.title}</h4>
                   <div class="stage-image">
                     ${PlaceholderImg({
-                      w: 300,
-                      h: 300,
-                      desc: stage.imageDesc,
+                      w: stage.image.w,
+                      h: stage.image.h,
+                      desc: stage.image.desc,
                       className: 'stage-img',
-                      src: stage.imageSrc,
-                      fallbackSrc: stage.imageFallback,
+                      src: stage.image.src,
                       loading: 'lazy',
-                      decoding: 'async'
+                      decoding: 'async',
+                      fit: 'contain'
                     }).outerHTML}
                   </div>
                   <p class="stage-desc">${stage.desc}</p>
@@ -155,6 +166,7 @@ export function ProductDetail({ id, onRoute }) {
               `).join('')}
             </div>
           </div>
+          ` : ''}
         </div>
 
         <div class="product-safety-panel card">

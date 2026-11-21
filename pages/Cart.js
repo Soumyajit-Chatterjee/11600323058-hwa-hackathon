@@ -1,5 +1,6 @@
 /* ChronoScent — Cart page */
 import { cart } from '../store/cart.js';
+import { getProduct } from '../data/products.js';
 import { Button } from '../components/Button.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 
@@ -42,7 +43,6 @@ export function Cart({ onRoute }) {
     if (items.length === 0) {
       itemsContainer.innerHTML = `
         <div class="empty-cart">
-          ${PlaceholderImg({ w: 260, h: 180, desc: 'Your cart is empty', className: 'empty-img' }).outerHTML}
           <p>Your cart is empty.</p>
           <p class="btn-container"><button type="button" class="btn btn--primary" id="empty-shop">Shop now</button></p>
         </div>
@@ -52,16 +52,22 @@ export function Cart({ onRoute }) {
     }
 
     items.forEach((item) => {
-      const cartImageMap = {
-        starter: 'assets/Cart_Page_StarterKit_260x180.jpg',
-        full: 'assets/Cart_Page_FullKit_260x180.jpg',
-        refill: 'assets/Cart_Page_TrailRefillPack_260x180.jpg',
-      };
+      const product = getProduct(item.productId);
+      const productImage = product?.image;
       const row = document.createElement('div');
       row.className = 'cart-item';
       row.innerHTML = `
         <div class="cart-item-thumb">
-          ${PlaceholderImg({ w: 80, h: 80, desc: item.imageDesc || 'Product image', className: 'thumb-img', src: cartImageMap[item.productId], loading: 'lazy', decoding: 'async' }).outerHTML}
+          ${PlaceholderImg({
+            w: productImage?.w || 80,
+            h: productImage?.h || 80,
+            desc: productImage?.desc || item.imageDesc || 'ChronoScent product image',
+            className: 'thumb-img',
+            src: productImage?.src,
+            loading: 'lazy',
+            decoding: 'async',
+            fit: 'contain'
+          }).outerHTML}
         </div>
         <div class="cart-item-info">
           <p class="cart-item-name">${item.name}</p>

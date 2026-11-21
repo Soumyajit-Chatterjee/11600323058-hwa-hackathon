@@ -1,5 +1,5 @@
 /* ChronoScent — Landing page */
-import { products, brandConfig } from '../data/products.js';
+import { products, brandConfig, siteImages } from '../data/products.js';
 import { faqs } from '../data/faq.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 import { Button } from '../components/Button.js';
@@ -43,15 +43,16 @@ export function Landing({ onRoute }) {
   heroImg.className = 'product-card hero-card';
   heroImg.appendChild(
     PlaceholderImg({
-      w: 500,
-      h: 520,
-      desc: 'ChronoScent dual-chamber chew base concept: rugged moulded rubber with tactile ridges, removable PCM warming disc, cotton scent strips, and edible treat cartridges',
-      src: 'assets/Home_Page_Main_Image_500x520.webp',
-      fallbackSrc: 'assets/Home_Page_Main_Image_500x520.png',
-      srcSet: 'assets/Home_Page_Main_Image_380x396.webp 380w, assets/Home_Page_Main_Image_500x520.webp 500w',
+      w: siteImages.hero.w,
+      h: siteImages.hero.h,
+      desc: siteImages.hero.desc,
+      src: siteImages.hero.src,
+      srcSet: `${siteImages.hero.src} ${siteImages.hero.w}w`,
       sizes: '(max-width: 768px) 100vw, 380px',
       loading: 'eager',
       decoding: 'sync',
+      fetchPriority: 'high',
+      fit: 'contain',
     })
   );
   visual.appendChild(heroImg);
@@ -136,12 +137,47 @@ export function Landing({ onRoute }) {
       <header class="section-header page-header">
         <h2 class="section-title">Two isolated chambers</h2>
       </header>
+      <div class="chambers-overview">
+        <div class="chamber-feature-image">
+          ${PlaceholderImg({
+            w: siteImages.dualChamberCutaway.w,
+            h: siteImages.dualChamberCutaway.h,
+            desc: siteImages.dualChamberCutaway.desc,
+            src: siteImages.dualChamberCutaway.src,
+            loading: 'lazy',
+            decoding: 'async',
+            fit: 'contain'
+          }).outerHTML}
+        </div>
+      </div>
       <div class="chambers-grid">
         <div class="chamber-card card">
+          <div class="chamber-image">
+            ${PlaceholderImg({
+              w: siteImages.chronoTreatChamber.w,
+              h: siteImages.chronoTreatChamber.h,
+              desc: siteImages.chronoTreatChamber.desc,
+              src: siteImages.chronoTreatChamber.src,
+              loading: 'lazy',
+              decoding: 'async',
+              fit: 'contain'
+            }).outerHTML}
+          </div>
           <h3 class="card-title">Timed treat chamber</h3>
           <p class="card-desc">Concept: staged food release intended to keep your dog working for rewards over time. Edible treat cartridges are replaceable.</p>
         </div>
         <div class="chamber-card card">
+          <div class="chamber-image">
+            ${PlaceholderImg({
+              w: siteImages.thermoScentCore.w,
+              h: siteImages.thermoScentCore.h,
+              desc: siteImages.thermoScentCore.desc,
+              src: siteImages.thermoScentCore.src,
+              loading: 'lazy',
+              decoding: 'async',
+              fit: 'contain'
+            }).outerHTML}
+          </div>
           <h3 class="card-title">Warmth & scent chamber</h3>
           <p class="card-desc">Concept: removable PCM warming disc and cotton scent strip hold your scent. Your dog returns to warmth and familiarity between chews.</p>
         </div>
@@ -159,14 +195,47 @@ export function Landing({ onRoute }) {
       </header>
       <div class="timeline-grid">
         <div class="timeline-item card">
+          <div class="timeline-image">
+            ${PlaceholderImg({
+              w: siteImages.timedTreatCartridges.w,
+              h: siteImages.timedTreatCartridges.h,
+              desc: siteImages.timedTreatCartridges.desc,
+              src: siteImages.timedTreatCartridges.src,
+              loading: 'lazy',
+              decoding: 'async',
+              fit: 'contain'
+            }).outerHTML}
+          </div>
           <h3 class="card-title">Early</h3>
           <p class="card-desc">Concept: your dog discovers the chew base and first treat release.</p>
         </div>
         <div class="timeline-item card">
+          <div class="timeline-image">
+            ${PlaceholderImg({
+              w: siteImages.chronoTreatChamber.w,
+              h: siteImages.chronoTreatChamber.h,
+              desc: siteImages.chronoTreatChamber.desc,
+              src: siteImages.chronoTreatChamber.src,
+              loading: 'lazy',
+              decoding: 'async',
+              fit: 'contain'
+            }).outerHTML}
+          </div>
           <h3 class="card-title">Middle</h3>
           <p class="card-desc">Concept: scent strip and warming disc provide a familiar resting point between chew sessions.</p>
         </div>
         <div class="timeline-item card">
+          <div class="timeline-image">
+            ${PlaceholderImg({
+              w: siteImages.dualChamberCutaway.w,
+              h: siteImages.dualChamberCutaway.h,
+              desc: siteImages.dualChamberCutaway.desc,
+              src: siteImages.dualChamberCutaway.src,
+              loading: 'lazy',
+              decoding: 'async',
+              fit: 'contain'
+            }).outerHTML}
+          </div>
           <h3 class="card-title">Later</h3>
           <p class="card-desc">Concept: staged treat release and rearrangeable chambers intended to keep the experience fresh as your dog improves.</p>
         </div>
@@ -255,7 +324,7 @@ export function Landing({ onRoute }) {
     faqAccordion.appendChild(faqItem);
   });
 
-  // --- 10. Call to action ---
+  // --- 9. Call to action ---
   const ctaStrip = document.createElement('section');
   ctaStrip.className = 'cta-strip';
   ctaStrip.innerHTML = `

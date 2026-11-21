@@ -1,7 +1,6 @@
 /* ChronoScent — Shop page (kit listing) */
 import { products } from '../data/products.js';
 import { ProductCard } from '../components/ProductCard.js';
-import { PlaceholderImg } from '../components/PlaceholderImg.js';
 
 export function Shop({ onRoute }) {
   const section = document.createElement('div');

@@ -1,4 +1,4 @@
-/* ChronoScent — central product data (single source of truth) */
+/* ChronoScent — central product and image data (single source of truth) */
 /* All prices, descriptions, included items, materials, suitability and safety notes
    are defined here. Components and pages read from this file only. */
 /*
@@ -9,6 +9,61 @@
    cartridge formulation, temperature, and environment. Not a medical device. Not an
    anti-anxiety or calming product. Not guaranteed to keep any dog busy for any set time.
 */
+
+/* Current image assets are kept in assets/ and referenced with project-relative paths.
+   Width and height values describe the intrinsic files so the browser can reserve space
+   before each image loads. */
+export const siteImages = {
+  hero: {
+    src: 'assets/Homepage_Hero_500x520.png',
+    w: 1264,
+    h: 1264,
+    desc: 'ChronoScent dual-chamber chew pod concept with a navy moulded rubber base, amber warming disc, cotton scent strips and brown treat cartridges',
+  },
+  starterShop: {
+    src: 'assets/StarterKit_Shop_Card_500x500.png',
+    w: 1264,
+    h: 1264,
+    desc: 'ChronoScent Starter Kit showing a navy capsule-shaped chew base with a cream warming disc, three cotton scent strips and two wrapped treat cartridges',
+  },
+  refillShop: {
+    src: 'assets/Refill_Pack_Shop_Card_500x500.png',
+    w: 1264,
+    h: 1264,
+    desc: 'ChronoScent Scent Refill Pack showing eight treat portions in clear trays and four cotton scent strips',
+  },
+  starterDetail: {
+    src: 'assets/StarterKit_Product_Detail_420x560.png',
+    w: 1088,
+    h: 1456,
+    desc: 'ChronoScent Starter Kit product view showing the upright navy tactile chew pod with an amber warming disc, cotton scent strips and two treat cartridges',
+  },
+  dualChamberCutaway: {
+    src: 'assets/DualChamber_Cutaway_500x500.png',
+    w: 1264,
+    h: 1264,
+    desc: 'ChronoScent dual-chamber cutaway concept showing separate treat and warmth/scent compartments inside a navy moulded outer body',
+  },
+  thermoScentCore: {
+    src: 'assets/Thermo_Scent_Core_500x500.png',
+    w: 1264,
+    h: 1264,
+    desc: 'Thermo-Scent core concept showing a cream ceramic diffuser cage with a cotton scent insert and removable base',
+  },
+  chronoTreatChamber: {
+    src: 'assets/Chrono_Treat_Chamber_500x500.png',
+    w: 1264,
+    h: 1264,
+    desc: 'Chrono-Treat chamber concept showing a clear amber treat cartridge partly removed from the navy chew pod',
+  },
+  timedTreatCartridges: {
+    src: 'assets/Timed_Treat_Cartridges_500x500.png',
+    w: 1264,
+    h: 1264,
+    desc: 'ChronoScent timed treat cartridge concept showing assorted edible treat portions in clear protective trays',
+  },
+};
+
 export const products = [
   {
     id: 'starter',
@@ -47,12 +102,14 @@ export const products = [
       { label: 'Large', detail: 'Expanded chambers for larger dogs (concept sizing).' }
     ],
     image: {
-      w: 500,
-      h: 500,
-      desc: 'ChronoScent starter kit concept: rugged moulded rubber chew base with two isolated chambers, removable PCM warming disc, cotton scent strips, and edible treat cartridges arranged together',
-      src: 'assets/Shop_Page_StarterKit_500x500.webp',
-      fallbackSrc: 'assets/Shop_Page_StarterKit_500x500.png',
-      gallerySrc: 'assets/Product_Page_StarterKit_420x560.jpg'
+      w: siteImages.starterShop.w,
+      h: siteImages.starterShop.h,
+      desc: siteImages.starterShop.desc,
+      src: siteImages.starterShop.src,
+      gallerySrc: siteImages.starterDetail.src,
+      galleryW: siteImages.starterDetail.w,
+      galleryH: siteImages.starterDetail.h,
+      galleryDesc: siteImages.starterDetail.desc,
     },
     safetyNotes:
       'Concept product — inspect the base and cartridges during initial sessions to make sure your dog does not tear, swallow, or aggressively chew any part. Remove damaged components immediately and follow your veterinarian’s advice for your dog’s chewing habits. The scent strip and PCM disc are not for chewing or ingestion. Real-world safety requires physical testing and veterinary review.',
@@ -72,30 +129,22 @@ export const products = [
           {
             title: 'Start',
             desc: 'Concept: a smear or immediate treat reward on the surface encourages initial interest and first contact with the chew base.',
-            imageDesc: 'Timeline start: smear reward on ChronoScent chew base surface',
-            imageSrc: 'assets/Home_Page_Main_Image_500x520.webp',
-            imageFallback: 'assets/Home_Page_Main_Image_500x520.png'
+            image: siteImages.hero,
           },
           {
             title: 'Middle',
             desc: 'Concept: a protected treat stage becomes available after chewing and saliva gradually affect the edible barrier, releasing rewards gradually.',
-            imageDesc: 'Timeline middle: protected treat stage after chewing on ChronoScent base',
-            imageSrc: 'assets/Shop_Page_StarterKit_500x500.webp',
-            imageFallback: 'assets/Shop_Page_StarterKit_500x500.png'
+            image: siteImages.chronoTreatChamber,
           },
           {
             title: 'Later',
             desc: 'Concept: a final reward is intended to appear after the dog has spent more time with the toy, encouraging extended engagement.',
-            imageDesc: 'Timeline later: final reward after extended engagement with ChronoScent chew base',
-            imageSrc: 'assets/Shop_Page_FullKit_500x500.webp',
-            imageFallback: 'assets/Shop_Page_FullKit_500x500.png'
+            image: siteImages.timedTreatCartridges,
           },
           {
             title: 'Throughout',
             desc: 'Concept: the separate scent chamber provides familiar owner scent and gentle warmth from the PCM warming disc between chew sessions.',
-            imageDesc: 'Timeline throughout: scent chamber with owner scent and PCM warming disc',
-            imageSrc: 'assets/Shop_Page_TrailRefillPack_500x500.webp',
-            imageFallback: 'assets/Shop_Page_TrailRefillPack_500x500.png'
+            image: siteImages.thermoScentCore,
           }
         ]
       }
@@ -129,12 +178,14 @@ export const products = [
     ],
     sizes: [{ label: 'One size', detail: 'Works with both base sizes (concept compatibility).' }],
     image: {
-      w: 500,
-      h: 500,
-      desc: 'ChronoScent scent refill pack concept: eight edible timed treat cartridges and four cotton scent strips for the dual-chamber chew base',
-      src: 'assets/Shop_Page_TrailRefillPack_500x500.webp',
-      fallbackSrc: 'assets/Shop_Page_TrailRefillPack_500x500.png',
-      gallerySrc: 'assets/Product_Page_TrailRefillPack_420x560.jpg'
+      w: siteImages.refillShop.w,
+      h: siteImages.refillShop.h,
+      desc: siteImages.refillShop.desc,
+      src: siteImages.refillShop.src,
+      gallerySrc: siteImages.refillShop.src,
+      galleryW: siteImages.refillShop.w,
+      galleryH: siteImages.refillShop.h,
+      galleryDesc: siteImages.refillShop.desc,
     },
     safetyNotes:
       'Concept product — timed treat cartridges contain edible treats. Cotton scent strips and PCM discs are not for chewing or ingestion. Check cartridges during initial sessions.',
