@@ -56,6 +56,8 @@ export function Checkout({ onRoute }) {
             <textarea id="checkout-address" name="address" rows="3" autocomplete="street-address" required aria-required="true"></textarea>
           </div>
 
+          <p class="form-notice" role="note">This is a mock checkout. No real payment is processed. Your details are only used to generate a local confirmation on this device and are not sent anywhere.</p>
+
           <p id="checkout-error" class="error-msg" role="alert" aria-live="assertive"></p>
 
           <div class="order-total">
@@ -133,10 +135,6 @@ export function Checkout({ onRoute }) {
     const formData = new FormData(form);
     const order = {
       id: 'CS' + Date.now().toString(36).toUpperCase(),
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      address: formData.get('address'),
       items: cart.getItems(),
       total,
       createdAt: new Date().toISOString(),

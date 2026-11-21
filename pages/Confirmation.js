@@ -45,11 +45,8 @@ export function Confirmation({ orderId, onRoute }) {
         </div>
 
         <div class="confirmation-details" data-reveal style="--reveal-delay: 90ms">
-          <h3>Customer</h3>
-          <div class="detail-row"><span>Name</span><span>${match.name}</span></div>
-          <div class="detail-row"><span>Email</span><span>${match.email}</span></div>
-          <div class="detail-row"><span>Phone</span><span>${match.phone}</span></div>
-          <div class="detail-row"><span>Address</span><span>${match.address}</span></div>
+          <h3>Order summary</h3>
+          <p class="detail-note">This is a local confirmation only. No personal details are stored or transmitted.</p>
 
           <h3>Items</h3>
           <ul class="confirmation-items" aria-label="Confirmed items"></ul>

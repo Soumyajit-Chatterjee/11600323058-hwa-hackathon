@@ -1585,6 +1585,18 @@ ul, ol {
   background: #fdecef;
 }
 
+.form-notice,
+.detail-note {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-alt);
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
 /* Full-width divider between the product hero and the detail blocks */
 .product-divider {
   position: relative;
