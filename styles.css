@@ -1765,7 +1765,7 @@ button {
 }
 
 .materials-strip .section-title {
-  color: var(--color-text-light);
+  color: var(--color-accent);
 }
 
 .materials-safety-grid {
