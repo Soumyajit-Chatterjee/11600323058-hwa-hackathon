@@ -24,15 +24,44 @@ let footerInstance = null;
 let currentPage = null;
 let currentCleanup = null;
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canReveal = 'IntersectionObserver' in window && !prefersReducedMotion;
+let revealObserver = null;
+
 function setTitle(title) {
   document.title = title ? `ChronoScent — ${title}` : 'ChronoScent';
 }
 
 function focusApp() {
   if (appEl) {
-    appEl.focus();
-    appEl.scrollTop = 0;
+    appEl.focus({ preventScroll: true });
   }
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+}
+
+function getRevealObserver() {
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
+    );
+  }
+  return revealObserver;
+}
+
+function setupReveals(root) {
+  if (!canReveal || !root) return;
+  root.querySelectorAll('[data-reveal]').forEach((el) => {
+    if (el.classList.contains('is-revealed')) return;
+    getRevealObserver().observe(el);
+  });
 }
 
 async function mountPage(renderFn, ...args) {
@@ -40,14 +69,15 @@ async function mountPage(renderFn, ...args) {
     if (currentPage.cleanup) currentPage.cleanup();
     if (currentEl) appEl.removeChild(currentEl);
   }
-  focusApp();
-  setTimeout(() => focusApp(), 50); // ensure focus after render
 
   const result = renderFn(...args);
   const el = result.el;
   appEl.appendChild(el);
   currentPage = result;
   currentEl = el;
+
+  focusApp();
+  setupReveals(el);
 
   return result;
 }
@@ -93,6 +123,8 @@ function navigate(href) {
 }
 
 function init() {
+  if (canReveal) document.body.classList.add('reveal-ready');
+
   headerInstance = Header({ onRoute: navigate });
   footerInstance = Footer();
   if (headerEl) headerEl.appendChild(headerInstance.el);

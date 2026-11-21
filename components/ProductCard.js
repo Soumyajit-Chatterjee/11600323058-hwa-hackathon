@@ -4,8 +4,9 @@ import { PlaceholderImg } from '../components/PlaceholderImg.js';
 export function ProductCard({ product, onSelect }) {
   const card = document.createElement('article');
   card.className = 'card product-card';
+  card.setAttribute('data-reveal', '');
 
-  // Ribbon badge (permanent on Full Kit / Refill)
+  // Ribbon badge (permanent on the starter kit)
   if (product.ribbon) {
     const ribbon = document.createElement('span');
     ribbon.className = 'kit-ribbon';
@@ -13,18 +14,25 @@ export function ProductCard({ product, onSelect }) {
     card.appendChild(ribbon);
   }
 
-  // Subscription badge for refill pack
-  if (product.subscription) {
-    const subBadge = document.createElement('span');
-    subBadge.className = 'kit-tag sub-tag';
-    subBadge.textContent = 'Subscription';
-    card.appendChild(subBadge);
-  } else {
-    const tag = document.createElement('span');
-    tag.className = 'kit-tag';
-    tag.textContent = product.name === 'Scent Refill Pack' ? 'Add-on' : 'Starter';
-    card.appendChild(tag);
-  }
+  const imgWrap = document.createElement('div');
+  imgWrap.className = 'card-image';
+  imgWrap.appendChild(
+    PlaceholderImg({
+      w: product.image.w,
+      h: product.image.h,
+      desc: product.image.desc,
+      className: 'card-placeholder',
+      src: product.image.src,
+      srcSet: product.image.srcSet,
+      sizes: '(max-width: 768px) calc(100vw - 48px), (max-width: 1100px) 45vw, 520px',
+      loading: 'lazy',
+      decoding: 'async',
+    })
+  );
+
+  const tag = document.createElement('span');
+  tag.className = product.subscription ? 'kit-tag sub-tag' : 'kit-tag';
+  tag.textContent = product.subscription ? 'Subscription' : 'Starter';
 
   const name = document.createElement('h3');
   name.className = 'card-title';
@@ -34,7 +42,6 @@ export function ProductCard({ product, onSelect }) {
   type.className = 'card-type';
   type.textContent = product.productType;
 
-  // Price block with sale pricing
   const priceWrap = document.createElement('div');
   priceWrap.className = 'card-price-wrap';
 
@@ -49,39 +56,25 @@ export function ProductCard({ product, onSelect }) {
     price.textContent = `₹${product.price.toLocaleString()}`;
   }
 
-  const origPrice = document.createElement('span');
-  origPrice.className = 'card-orig-price';
-
   if (product.salePrice && product.salePrice < product.price) {
+    const origPrice = document.createElement('span');
+    origPrice.className = 'card-orig-price';
     origPrice.textContent = `₹${product.price.toLocaleString()}`;
+
     const saleTag = document.createElement('span');
     saleTag.className = 'card-sale-tag';
     saleTag.textContent = product.saleLabel;
-    priceWrap.appendChild(saleTag);
-  }
 
-  priceWrap.appendChild(origPrice);
-  priceWrap.appendChild(price);
+    priceWrap.appendChild(price);
+    priceWrap.appendChild(origPrice);
+    priceWrap.appendChild(saleTag);
+  } else {
+    priceWrap.appendChild(price);
+  }
 
   const desc = document.createElement('p');
   desc.className = 'card-desc';
   desc.textContent = product.summary;
-
-  const imgWrap = document.createElement('div');
-  imgWrap.className = 'card-image';
-  imgWrap.appendChild(
-    PlaceholderImg({
-      w: product.image.w,
-      h: product.image.h,
-      desc: product.image.desc,
-      className: 'card-placeholder',
-      src: product.image.src,
-      srcSet: product.image.srcSet,
-      sizes: '(max-width: 768px) calc(100vw - 48px), (max-width: 1100px) 45vw, 360px',
-      loading: 'lazy',
-      decoding: 'async',
-    })
-  );
 
   const btn = document.createElement('button');
   btn.type = 'button';
@@ -91,17 +84,12 @@ export function ProductCard({ product, onSelect }) {
     if (onSelect) onSelect(product);
   });
 
-  // Hover-to-highlight: highlight this card on mouseenter, remove on mouseleave
-  card.addEventListener('mouseenter', () => {
-    document.querySelectorAll('.product-card').forEach((c) => c.classList.remove('highlighted'));
-    card.classList.add('highlighted');
-  });
-
+  card.appendChild(imgWrap);
+  card.appendChild(tag);
   card.appendChild(name);
   card.appendChild(type);
   card.appendChild(priceWrap);
   card.appendChild(desc);
-  card.appendChild(imgWrap);
   card.appendChild(btn);
 
   return card;

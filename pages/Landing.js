@@ -40,7 +40,7 @@ export function Landing({ onRoute }) {
 
   const visual = hero.querySelector('.hero-visual');
   const heroImg = document.createElement('div');
-  heroImg.className = 'product-card hero-card';
+  heroImg.className = 'hero-card';
   heroImg.appendChild(
     PlaceholderImg({
       w: siteImages.hero.w,
@@ -71,7 +71,7 @@ export function Landing({ onRoute }) {
   whyStrip.className = 'why-strip';
   whyStrip.innerHTML = `
     <div class="container">
-      <div class="why-inner">
+      <div class="why-inner" data-reveal>
         <header class="why-header">
           <h2 class="section-title">Why ordinary single stage toys lose attention</h2>
         </header>
@@ -86,7 +86,7 @@ export function Landing({ onRoute }) {
   how.className = 'how-it-works';
   how.innerHTML = `
     <div class="container">
-      <header class="section-header page-header">
+      <header class="section-header" data-reveal>
         <h2 class="section-title">How ChronoScent works</h2>
         <p class="section-intro">A concept sequence of chew, scent, warmth, and delayed reward intended to keep your dog engaged over time.</p>
       </header>
@@ -118,9 +118,11 @@ export function Landing({ onRoute }) {
   ];
 
   const grid = how.querySelector('.steps-grid');
-  steps.forEach((s) => {
+  steps.forEach((s, i) => {
     const step = document.createElement('article');
     step.className = 'step card';
+    step.setAttribute('data-reveal', '');
+    step.style.setProperty('--reveal-delay', `${i * 80}ms`);
     step.innerHTML = `
       <div class="step-number">${s.num}</div>
       <h3 class="step-title">${s.title}</h3>
@@ -134,10 +136,10 @@ export function Landing({ onRoute }) {
   chambersStrip.className = 'chambers-strip';
   chambersStrip.innerHTML = `
     <div class="container">
-      <header class="section-header page-header">
+      <header class="section-header" data-reveal>
         <h2 class="section-title">Two isolated chambers</h2>
       </header>
-      <div class="chambers-overview">
+      <div class="chambers-overview" data-reveal>
         <div class="chamber-feature-image">
           ${PlaceholderImg({
             w: siteImages.dualChamberCutaway.w,
@@ -151,7 +153,7 @@ export function Landing({ onRoute }) {
         </div>
       </div>
       <div class="chambers-grid">
-        <div class="chamber-card card">
+        <div class="chamber-card card" data-reveal>
           <div class="chamber-image">
             ${PlaceholderImg({
               w: siteImages.chronoTreatChamber.w,
@@ -166,7 +168,7 @@ export function Landing({ onRoute }) {
           <h3 class="card-title">Timed treat chamber</h3>
           <p class="card-desc">Concept: staged food release intended to keep your dog working for rewards over time. Edible treat cartridges are replaceable.</p>
         </div>
-        <div class="chamber-card card">
+        <div class="chamber-card card" data-reveal style="--reveal-delay: 90ms">
           <div class="chamber-image">
             ${PlaceholderImg({
               w: siteImages.thermoScentCore.w,
@@ -190,11 +192,11 @@ export function Landing({ onRoute }) {
   timelineStrip.className = 'timeline-strip';
   timelineStrip.innerHTML = `
     <div class="container">
-      <header class="section-header page-header">
+      <header class="section-header" data-reveal>
         <h2 class="section-title">Engagement over time</h2>
       </header>
       <div class="timeline-grid">
-        <div class="timeline-item card">
+        <div class="timeline-item card" data-reveal>
           <div class="timeline-image">
             ${PlaceholderImg({
               w: siteImages.timedTreatCartridges.w,
@@ -209,7 +211,7 @@ export function Landing({ onRoute }) {
           <h3 class="card-title">Early</h3>
           <p class="card-desc">Concept: your dog discovers the chew base and first treat release.</p>
         </div>
-        <div class="timeline-item card">
+        <div class="timeline-item card" data-reveal style="--reveal-delay: 80ms">
           <div class="timeline-image">
             ${PlaceholderImg({
               w: siteImages.chronoTreatChamber.w,
@@ -224,7 +226,7 @@ export function Landing({ onRoute }) {
           <h3 class="card-title">Middle</h3>
           <p class="card-desc">Concept: scent strip and warming disc provide a familiar resting point between chew sessions.</p>
         </div>
-        <div class="timeline-item card">
+        <div class="timeline-item card" data-reveal style="--reveal-delay: 160ms">
           <div class="timeline-image">
             ${PlaceholderImg({
               w: siteImages.dualChamberCutaway.w,
@@ -248,15 +250,15 @@ export function Landing({ onRoute }) {
   materialsStrip.className = 'materials-strip';
   materialsStrip.innerHTML = `
     <div class="container">
-      <header class="section-header page-header">
+      <header class="section-header" data-reveal>
         <h2 class="section-title">Materials & safety</h2>
       </header>
       <div class="materials-safety-grid">
-        <div class="materials-list card">
+        <div class="materials-card card" data-reveal>
           <h3 class="card-title">Materials</h3>
           <ul class="includes-list"></ul>
         </div>
-        <div class="safety-note card">
+        <div class="safety-note card" data-reveal style="--reveal-delay: 90ms">
           <h3 class="card-title">Safety & care</h3>
           <p class="card-desc">${starter.safetyNotes}</p>
         </div>
@@ -277,7 +279,7 @@ export function Landing({ onRoute }) {
   faqStrip.className = 'faq-strip';
   faqStrip.innerHTML = `
     <div class="container">
-      <header class="section-header page-header">
+      <header class="section-header" data-reveal>
         <h2 class="section-title">Frequently asked questions</h2>
       </header>
       <div class="faq-accordion" aria-label="FAQs"></div>
@@ -289,6 +291,8 @@ export function Landing({ onRoute }) {
     const faqItem = document.createElement('div');
     faqItem.className = 'faq-item';
     faqItem.setAttribute('data-open', 'false');
+    faqItem.setAttribute('data-reveal', '');
+    faqItem.style.setProperty('--reveal-delay', `${index * 60}ms`);
 
     const trigger = document.createElement('button');
     trigger.type = 'button';
@@ -329,7 +333,7 @@ export function Landing({ onRoute }) {
   ctaStrip.className = 'cta-strip';
   ctaStrip.innerHTML = `
     <div class="container">
-      <div class="cta-content card">
+      <div class="cta-content" data-reveal>
         <h2 class="section-title">Ready to try ChronoScent?</h2>
         <p class="hero-body">Choose the Starter Kit or subscribe to the Refill Pack. No batteries, Wi-Fi, or app required. Concept product — real-world timing, durability, and safety require physical testing and veterinary review.</p>
         <div class="cta-actions"></div>

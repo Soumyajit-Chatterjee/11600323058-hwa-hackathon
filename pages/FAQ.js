@@ -1,21 +1,20 @@
 /* ChronoScent — FAQ page */
 import { faqs } from '../data/faq.js';
-import { Button } from '../components/Button.js';
 
 export function FAQ({ onRoute }) {
   const section = document.createElement('div');
-  section.className = 'page faq';
-  section.style.padding = '72px 0 64px';
+  section.className = 'page faq page--pad';
 
   section.innerHTML = `
     <div class="container">
-      <header class="section-header page-header">
+      <header class="page-head" data-reveal>
+        <p class="eyebrow">Good to know</p>
         <h1 class="section-title">Frequently asked questions</h1>
         <p class="section-intro">Quick answers about ChronoScent.</p>
       </header>
       <div class="faq-accordion" aria-label="FAQs"></div>
-      <p class="btn-container" style="margin-top: 32px;">
-        <button type="button" class="btn btn--outline" data-link href="#/">Back to Home</button>
+      <p class="btn-container">
+        <a href="#/" class="btn btn--outline" data-link>Back to Home</a>
       </p>
     </div>
   `;
@@ -26,12 +25,14 @@ export function FAQ({ onRoute }) {
     const faqItem = document.createElement('div');
     faqItem.className = 'faq-item';
     faqItem.setAttribute('data-open', 'false');
+    faqItem.setAttribute('data-reveal', '');
+    faqItem.style.setProperty('--reveal-delay', `${Math.min(index, 6) * 50}ms`);
 
     const trigger = document.createElement('button');
     trigger.type = 'button';
     trigger.className = 'faq-question';
     trigger.setAttribute('aria-expanded', 'false');
-    trigger.setAttribute('aria-controls', `faq-answer-${index}`);
+    trigger.setAttribute('aria-controls', `page-faq-answer-${index}`);
     trigger.innerHTML = `
       <span class="faq-q">${item.q}</span>
       <span class="faq-toggle" aria-hidden="true">+</span>
@@ -39,7 +40,7 @@ export function FAQ({ onRoute }) {
 
     const answer = document.createElement('div');
     answer.className = 'faq-answer';
-    answer.id = `faq-answer-${index}`;
+    answer.id = `page-faq-answer-${index}`;
     answer.setAttribute('hidden', 'true');
     answer.innerHTML = `<p class="faq-a">${item.a}</p>`;
 
@@ -62,16 +63,10 @@ export function FAQ({ onRoute }) {
   });
 
   section.addEventListener('click', (e) => {
-    const link = e.target.closest('[data-link]');
-    if (link) {
-      e.preventDefault();
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#/')) {
-        onRoute(href);
-      } else {
-        onRoute('#/');
-      }
-    }
+    const link = e.target.closest('a[data-link]');
+    if (!link) return;
+    e.preventDefault();
+    onRoute(link.getAttribute('href') || '#/');
   });
 
   return { el: section };

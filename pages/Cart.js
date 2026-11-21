@@ -1,34 +1,33 @@
 /* ChronoScent — Cart page */
 import { cart } from '../store/cart.js';
 import { getProduct } from '../data/products.js';
-import { Button } from '../components/Button.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 
 export function Cart({ onRoute }) {
   const section = document.createElement('div');
-  section.className = 'page cart';
-  section.style.padding = '72px 0 64px';
+  section.className = 'page cart page--pad';
 
   function render() {
     const items = cart.getItems();
     section.innerHTML = `
       <div class="container">
-        <header class="page-header">
+        <header class="page-head" data-reveal>
+          <p class="eyebrow">Your selection</p>
           <h1 class="section-title">Your cart</h1>
           <p class="section-intro">Review your items before checkout.</p>
         </header>
 
         <div class="cart-wrap">
           <div class="cart-items" aria-label="Cart items"></div>
-          <div class="cart-summary">
+          <aside class="cart-summary" data-reveal>
             <h3>Order summary</h3>
             <div class="summary-row"><span>Items</span><span id="cart-item-count">0</span></div>
-            <div class="summary-row"><span>Total</span><span id="cart-total">₹0</span></div>
+            <div class="summary-row summary-row--total"><span>Total</span><span id="cart-total">₹0</span></div>
             <div class="summary-actions">
               ${items.length ? `<button type="button" class="btn btn--primary btn--block checkout-btn">Checkout</button>` : ''}
               <button type="button" class="btn btn--outline btn--block continue-shopping">Continue shopping</button>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     `;
@@ -43,11 +42,17 @@ export function Cart({ onRoute }) {
     if (items.length === 0) {
       itemsContainer.innerHTML = `
         <div class="empty-cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 7h12l-1.2 12.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 7Z"></path>
+            <path d="M9 7V5.5a3 3 0 0 1 6 0V7"></path>
+          </svg>
           <p>Your cart is empty.</p>
+          <p>Browse the concept kits to get started.</p>
           <p class="btn-container"><button type="button" class="btn btn--primary" id="empty-shop">Shop now</button></p>
         </div>
       `;
       section.querySelector('#empty-shop').addEventListener('click', () => onRoute('#/shop'));
+      section.querySelector('.continue-shopping').addEventListener('click', () => onRoute('#/shop'));
       return;
     }
 
