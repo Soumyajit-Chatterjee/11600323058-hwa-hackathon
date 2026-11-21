@@ -350,8 +350,8 @@ button {
 /* ---------- Subheading strip ---------- */
 .subheading-strip {
   padding: 40px 0;
-  background: var(--color-dark);
-  color: var(--color-text-light);
+  background: var(--color-accent);
+  color: var(--color-text-dark);
 }
 
 .subheading-container {
@@ -360,8 +360,8 @@ button {
 
 .hero-subheading {
   font-size: 1.1rem;
-  color: var(--color-text-light);
-  font-weight: 600;
+  color: var(--color-text-dark);
+  font-weight: 700;
   margin: 0;
 }
 
