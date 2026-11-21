@@ -52,11 +52,16 @@ export function Cart({ onRoute }) {
     }
 
     items.forEach((item) => {
+      const cartImageMap = {
+        starter: 'assets/Cart_Page_StarterKit_260x180.jpg',
+        full: 'assets/Cart_Page_FullKit_260x180.jpg',
+        refill: 'assets/Cart_Page_TrailRefillPack_260x180.jpg',
+      };
       const row = document.createElement('div');
       row.className = 'cart-item';
       row.innerHTML = `
         <div class="cart-item-thumb">
-          ${PlaceholderImg({ w: 80, h: 80, desc: item.imageDesc || 'Product image', className: 'thumb-img' }).outerHTML}
+          ${PlaceholderImg({ w: 80, h: 80, desc: item.imageDesc || 'Product image', className: 'thumb-img', src: cartImageMap[item.productId] }).outerHTML}
         </div>
         <div class="cart-item-info">
           <p class="cart-item-name">${item.name}</p>

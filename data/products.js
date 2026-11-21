@@ -9,7 +9,7 @@ export const products = [
     description:
       'Chew-resistant den base with reconfigurable puzzle chambers, plus 3 washable scent pods. Each pod holds a piece of your worn clothing and a treat. Pick your size below.',
     includes: ['Chew-resistant den base', '3 washable scent pods', 'Small/medium or large'],
-    image: { w: 500, h: 500, desc: 'Starter Kit: chew-resistant den base with three washable scent pods' },
+    image: { w: 500, h: 500, desc: 'Starter Kit: chew-resistant den base with three washable scent pods', src: 'assets/Shop_Page_StarterKit_500x500.png' },
     sizes: [
       { label: 'Small / Medium', detail: 'Toy, small and medium breeds.' },
       { label: 'Large', detail: 'Large and giant breeds with larger chambers and pod capacity.' },
@@ -29,7 +29,7 @@ export const products = [
       'Warmth insert + mechanical pulse disc',
       'Small/medium or large',
     ],
-    image: { w: 500, h: 500, desc: 'Full Kit: den base, six scent pods, warmth insert and mechanical pulse disc' },
+    image: { w: 500, h: 500, desc: 'Full Kit: den base, six scent pods, warmth insert and mechanical pulse disc', src: 'assets/Shop_Page_FullKit_500x500.png' },
     sizes: [
       { label: 'Small / Medium', detail: 'Toy, small and medium breeds.' },
       { label: 'Large', detail: 'Large and giant breeds with larger chambers and pod capacity.' },
@@ -45,7 +45,7 @@ export const products = [
     description:
       'Replaceable scent pods and reusable scent-wax sachets to lay a trail between pods. Compatible with both den sizes. Optional add-on for longer routes.',
     includes: ['Replaceable scent pods', 'Reusable scent-wax sachets', 'Compatible with both den sizes'],
-    image: { w: 500, h: 500, desc: 'Trail Refill Pack: scent pods and reusable scent-wax sachets' },
+    image: { w: 500, h: 500, desc: 'Trail Refill Pack: scent pods and reusable scent-wax sachets', src: 'assets/Shop_Page_TrailRefillPack_500x500.png' },
     sizes: [{ label: 'One size', detail: 'Works with both Small / Medium and Large dens.' }],
   },
 ];

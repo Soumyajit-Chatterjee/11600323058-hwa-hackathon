@@ -1,5 +1,22 @@
-/* Nuzzora — reusable image placeholder (accessible, with dimensions + description) */
-export function PlaceholderImg({ w, h, desc, className = '' }) {
+/* Nuzzora — reusable image component (real image with placeholder fallback) */
+export function PlaceholderImg({ w, h, desc, className = '', src }) {
+  // If a real image source is provided, render an  tag
+  if (src) {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = desc || 'Product image';
+    img.className = `placeholder-img ${className}`;
+    img.style.width = `${w}px`;
+    img.style.height = `${h}px`;
+    img.style.minHeight = `${h}px`;
+    img.style.objectFit = 'cover';
+    img.style.borderRadius = '12px';
+    img.style.border = '1px solid var(--color-border)';
+    img.style.background = '#f4f4f0';
+    return img;
+  }
+
+  // Fallback placeholder div
   const el = document.createElement('div');
   el.className = `placeholder-img ${className}`;
   el.setAttribute('role', 'img');
@@ -12,12 +29,15 @@ export function PlaceholderImg({ w, h, desc, className = '' }) {
   el.style.alignItems = 'center';
   el.style.justifyContent = 'center';
   el.style.background = '#eef0e6';
-  el.style.border = '1px dashed #c9c9b8';
+  el.style.border = '1px dashed var(--color-border)';
   el.style.borderRadius = '12px';
   el.style.color = '#7a7a8e';
   el.style.fontSize = '0.85rem';
   el.style.textAlign = 'center';
-  el.style.padding = '12px';
+  el.style.padding = '20px 16px';
+  el.style.wordWrap = 'break-word';
+  el.style.overflowWrap = 'break-word';
+  el.style.maxWidth = '100%';
 
   const dim = document.createElement('div');
   dim.style.fontWeight = '700';

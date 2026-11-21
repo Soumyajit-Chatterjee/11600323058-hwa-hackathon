@@ -42,6 +42,7 @@ export function Landing({ onRoute }) {
       w: 500,
       h: 520,
       desc: 'Nuzzora base den, scent pods, and trail sachets arranged together',
+      src: 'assets/Home_Page_Main_Image_500x520.png',
     })
   );
   const caption = document.createElement('p');

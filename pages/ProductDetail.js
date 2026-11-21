@@ -31,7 +31,7 @@ export function ProductDetail({ id, onRoute }) {
     <div class="container product-container">
       <div class="product-gallery">
         <div class="gallery-placeholder">
-          ${PlaceholderImg({ w: 420, h: 560, desc: product.image.desc, className: 'gallery-img' }).outerHTML}
+          ${PlaceholderImg({ w: 420, h: 560, desc: product.image.desc, className: 'gallery-img', src: product.image.src }).outerHTML}
         </div>
       </div>
       <div class="product-info">
