@@ -5,14 +5,16 @@ export function PlaceholderImg({ w, h, desc, className = '', src }) {
     const img = document.createElement('img');
     img.src = src;
     img.alt = desc || 'Product image';
-    img.className = `placeholder-img ${className}`;
+    img.className = className; // no placeholder-img class on real images
     img.style.width = `${w}px`;
     img.style.height = `${h}px`;
     img.style.minHeight = `${h}px`;
-    img.style.objectFit = 'cover';
-    img.style.borderRadius = '12px';
-    img.style.border = '1px solid var(--color-border)';
-    img.style.background = '#f4f4f0';
+    img.style.objectFit = 'contain';
+    img.style.borderRadius = '0';
+    img.style.border = 'none';
+    img.style.background = 'transparent';
+    img.style.display = 'block';
+    img.style.margin = '0 auto';
     return img;
   }
 
