@@ -56,7 +56,41 @@ export const products = [
       preparation: 'Before you leave, load a timed treat cartridge into the treat chamber, insert a cotton scent strip with your worn clothing into the scent chamber, and place the PCM warming disc in its slot. Close both chambers securely. Your dog can then chew, scent, and settle on its own.',
       experience: 'Early: your dog discovers the chew base and the first treat release. Middle: scent strip and warming disc provide a familiar resting point between chew sessions. Later: staged treat release and rearrangeable chambers keep the experience fresh as your dog improves.',
       refillItems: 'The Scent Refill Pack includes 8 timed treat cartridges and 4 cotton scent strips. It works with both Small / Medium and Large base sizes.',
-      cartridgeFormulations: 'Standard cartridges suit light and moderate chewers. Endurance cartridges are denser and made for heavy chewers who wear through standard cartridges faster. Match the formulation to your dog’s chewing strength.'
+      cartridgeFormulations: 'Standard cartridges suit light and moderate chewers. Endurance cartridges are denser and made for heavy chewers who wear through standard cartridges faster. Match the formulation to your dog’s chewing strength.',
+      timeline: {
+        title: 'Intended engagement timeline',
+        disclaimer: 'This is an intended design concept, not a guaranteed schedule. Actual release time can vary by dog chewing strength, cartridge formulation, temperature, and environment.',
+        stages: [
+          {
+            title: 'Start',
+            desc: 'A smear or immediate treat reward on the surface encourages initial interest and first contact with the chew base.',
+            imageDesc: 'Timeline start: smear reward on chew base surface',
+            imageSrc: 'assets/Home_Page_Main_Image_500x520.webp',
+            imageFallback: 'assets/Home_Page_Main_Image_500x520.png'
+          },
+          {
+            title: 'Middle',
+            desc: 'A protected treat stage becomes available after chewing and saliva gradually affect the edible barrier, releasing rewards gradually.',
+            imageDesc: 'Timeline middle: protected treat stage after chewing',
+            imageSrc: 'assets/Shop_Page_StarterKit_500x500.webp',
+            imageFallback: 'assets/Shop_Page_StarterKit_500x500.png'
+          },
+          {
+            title: 'Later',
+            desc: 'A final reward is intended to appear after the dog has spent more time with the toy, encouraging extended engagement.',
+            imageDesc: 'Timeline later: final reward after extended engagement',
+            imageSrc: 'assets/Shop_Page_FullKit_500x500.webp',
+            imageFallback: 'assets/Shop_Page_FullKit_500x500.png'
+          },
+          {
+            title: 'Throughout',
+            desc: 'The separate scent chamber provides familiar owner scent and gentle warmth from the PCM warming disc between chew sessions.',
+            imageDesc: 'Timeline throughout: scent chamber with owner scent and warmth',
+            imageSrc: 'assets/Shop_Page_TrailRefillPack_500x500.webp',
+            imageFallback: 'assets/Shop_Page_TrailRefillPack_500x500.png'
+          }
+        ]
+      }
     }
   },
   {

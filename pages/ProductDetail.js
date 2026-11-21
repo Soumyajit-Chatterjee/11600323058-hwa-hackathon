@@ -130,6 +130,31 @@ export function ProductDetail({ id, onRoute }) {
             <h3 class="card-title">Cartridge formulations</h3>
             <p class="card-desc">${product.details.cartridgeFormulations}</p>
           </div>
+
+          <div class="timeline-section card">
+            <h3 class="card-title">${product.details.timeline.title}</h3>
+            <p class="card-desc timeline-disclaimer">${product.details.timeline.disclaimer}</p>
+            <div class="timeline-grid">
+              ${product.details.timeline.stages.map((stage) => `
+                <div class="timeline-stage card">
+                  <h4 class="stage-title">${stage.title}</h4>
+                  <div class="stage-image">
+                    ${PlaceholderImg({
+                      w: 300,
+                      h: 300,
+                      desc: stage.imageDesc,
+                      className: 'stage-img',
+                      src: stage.imageSrc,
+                      fallbackSrc: stage.imageFallback,
+                      loading: 'lazy',
+                      decoding: 'async'
+                    }).outerHTML}
+                  </div>
+                  <p class="stage-desc">${stage.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
         </div>
 
         <div class="product-safety-panel card">
