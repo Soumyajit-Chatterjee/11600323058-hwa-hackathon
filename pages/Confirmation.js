@@ -8,7 +8,7 @@ export function Confirmation({ orderId, onRoute }) {
 
   let order = null;
   try {
-    const raw = localStorage.getItem('nuzzora_last_order');
+    const raw = localStorage.getItem('chronoscent_last_order');
     order = raw ? JSON.parse(raw) : null;
   } catch (e) {
     order = null;

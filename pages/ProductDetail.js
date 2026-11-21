@@ -1,4 +1,4 @@
-/* Nuzzora — Product details page */
+/* ChronoScent — Product details page */
 import { getProduct } from '../data/products.js';
 import { cart } from '../store/cart.js';
 import { Button } from '../components/Button.js';
@@ -87,7 +87,6 @@ export function ProductDetail({ id, onRoute }) {
     });
     sizeSelector.appendChild(btn);
   });
-  // select first by default
   if (product.sizes[0]) {
     sizeSelector.children[0].setAttribute('aria-checked', 'true');
     sizeSelector.children[0].classList.add('size--active');

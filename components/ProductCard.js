@@ -1,4 +1,4 @@
-/* Nuzzora — reusable product card */
+/* ChronoScent — reusable product card */
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 
 export function ProductCard({ product, onSelect }) {
@@ -15,7 +15,7 @@ export function ProductCard({ product, onSelect }) {
 
   const tag = document.createElement('span');
   tag.className = 'kit-tag';
-  tag.textContent = product.name === 'Trail Refill Pack' ? 'Add-on' : 'Starter';
+  tag.textContent = product.name === 'Scent Refill Pack' ? 'Add-on' : 'Starter';
 
   const name = document.createElement('h3');
   name.className = 'card-title';

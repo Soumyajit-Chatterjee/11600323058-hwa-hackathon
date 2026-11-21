@@ -1,4 +1,4 @@
-/* Nuzzora — Landing page (hero + how it works + strips) */
+/* ChronoScent — Landing page (hero + how it works + strips) */
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 import { Button } from '../components/Button.js';
 
@@ -13,7 +13,7 @@ export function Landing({ onRoute }) {
     <div class="container hero-inner">
       <div class="hero-content">
         <span class="badge">Purely mechanical · No batteries · No Wi-Fi</span>
-        <h1 class="hero-headline">A whole house adventure with a little bit of you at the center</h1>
+        <h1 class="hero-headline">A whole home cycle with a trace of you at the center</h1>
         <div class="hero-actions"></div>
       </div>
       <div class="hero-visual"></div>
@@ -39,7 +39,7 @@ export function Landing({ onRoute }) {
     PlaceholderImg({
       w: 500,
       h: 520,
-      desc: 'Nuzzora base den, scent pods, and trail sachets arranged together',
+      desc: 'ChronoScent base unit, scent cartridges, and timed-release wicks arranged together',
       src: 'assets/Home_Page_Main_Image_500x520.webp',
       fallbackSrc: 'assets/Home_Page_Main_Image_500x520.png',
       srcSet: 'assets/Home_Page_Main_Image_380x396.webp 380w, assets/Home_Page_Main_Image_500x520.webp 500w',
@@ -50,12 +50,12 @@ export function Landing({ onRoute }) {
   );
   visual.appendChild(heroImg);
 
-  // --- Subheading strip (darker background) ---
+  // --- Subheading strip ---
   const subheadingStrip = document.createElement('section');
   subheadingStrip.className = 'subheading-strip';
   subheadingStrip.innerHTML = `
     <div class="container subheading-container">
-      <p class="hero-subheading">Nuzzora keeps dogs searching, solving and settling while their people are away.</p>
+      <p class="hero-subheading">ChronoScent keeps pets searching, solving and settling while their people are away.</p>
     </div>
   `;
 
@@ -75,23 +75,23 @@ export function Landing({ onRoute }) {
   const steps = [
     {
       num: 1,
-      title: 'Think',
-      text: 'A chew-resistant base with puzzle chambers you can rearrange as your dog improves. Its ratchet release makes treats unpredictable, so every attempt feels different.',
+      title: 'Set',
+      text: 'A chew-resistant base with scent chambers you can rearrange as your pet improves. Its timed release makes scent unpredictable, so every attempt feels different.',
     },
     {
       num: 2,
-      title: 'Feel',
-      text: 'Hide five or six washable pods around the house. Each holds a piece of your clothing and a treat, turning your home into a scent-led search game.',
+      title: 'Hide',
+      text: 'Hide five or six washable cartridges around the home. Each holds a timed-release core and a scent, turning your space into a timed search cycle.',
     },
     {
       num: 3,
-      title: 'Solve',
-      text: 'Lay a path between pods with reusable scent-wax sachets. It\'s an optional add-on for dogs who enjoy a longer route and more searching.',
+      title: 'Cycle',
+      text: 'Lay a path between cartridges with reusable timed-release wicks. It\'s an optional add-on for pets who enjoy a longer route and more searching.',
     },
     {
       num: 4,
-      title: 'Rest',
-      text: 'Between hunts, your dog can come back to the den\'s warmth insert and mechanical pulse disc. A familiar resting point.',
+      title: 'Settle',
+      text: 'Between cycles, your pet can come back to the base\'s warmth insert and mechanical pulse disc. A familiar resting point without electronics.',
     },
   ];
 
@@ -107,12 +107,12 @@ export function Landing({ onRoute }) {
     grid.appendChild(step);
   });
 
-  // --- Body text strip (below how-it-works points, above footer) ---
+  // --- Body text strip ---
   const bodyStrip = document.createElement('section');
   bodyStrip.className = 'body-strip';
   bodyStrip.innerHTML = `
     <div class="container body-strip-container">
-      <p class="hero-body">Hide the pods. Set the puzzle. Leave a scent behind and a warm place to return to. No batteries, Wi-Fi or live check-ins required.</p>
+      <p class="hero-body">Hide the cartridges. Set the cycle. Leave a scent behind and a warm place to return to. No batteries, Wi-Fi or live check-ins required.</p>
     </div>
   `;
 

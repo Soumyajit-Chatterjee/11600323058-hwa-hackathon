@@ -1,4 +1,4 @@
-/* Nuzzora — Shop page (product listing) */
+/* ChronoScent — Shop page (kit listing) */
 import { products } from '../data/products.js';
 import { ProductCard } from '../components/ProductCard.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
@@ -12,7 +12,7 @@ export function Shop({ onRoute }) {
     <div class="container">
       <header class="section-header page-header">
         <h1 class="section-title">Choose your kit</h1>
-        <p class="section-intro">Every kit comes in two sizes. Small/medium fits toy, small and medium breeds. Large fits large and giant breeds, with larger chambers and pod capacity.</p>
+        <p class="section-intro">Every kit comes in two sizes. Small/medium fits compact chambers for personal spaces. Large fits expanded chambers for larger rooms.</p>
       </header>
       <div class="kits-grid" aria-label="Kits"></div>
       <div class="size-guidance card" id="size-guidance">
@@ -30,8 +30,8 @@ export function Shop({ onRoute }) {
 
   const sizeOptions = section.querySelector('.size-options');
   const sizeData = [
-    { label: 'Small / Medium', detail: 'Toy, small and medium breeds.' },
-    { label: 'Large', detail: 'Large and giant breeds with larger chambers and pod capacity.' },
+    { label: 'Small / Medium', detail: 'Compact chambers for personal spaces.' },
+    { label: 'Large', detail: 'Expanded chambers for larger rooms.' },
   ];
   sizeData.forEach((s) => {
     const opt = document.createElement('div');

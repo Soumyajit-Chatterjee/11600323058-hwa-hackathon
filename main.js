@@ -13,7 +13,7 @@ import { Confirmation } from './pages/Confirmation.js';
 
 // expose products globally for product detail page
 import { products } from './data/products.js';
-window.__NUZZORA_PRODUCTS__ = products;
+window.__CHRONOSENT_PRODUCTS__ = products;
 
 const appEl = document.getElementById('app');
 const headerEl = document.getElementById('header');
@@ -25,7 +25,7 @@ let currentPage = null;
 let currentCleanup = null;
 
 function setTitle(title) {
-  document.title = title ? `Nuzzora — ${title}` : 'Nuzzora';
+  document.title = title ? `ChronoScent — ${title}` : 'ChronoScent';
 }
 
 function focusApp() {

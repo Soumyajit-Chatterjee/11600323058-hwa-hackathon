@@ -138,7 +138,7 @@ export function Checkout({ onRoute }) {
     };
 
     try {
-      localStorage.setItem('nuzzora_last_order', JSON.stringify(order));
+      localStorage.setItem('chronoscent_last_order', JSON.stringify(order));
     } catch (e) {
       // ignore
     }

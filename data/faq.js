@@ -1,32 +1,32 @@
-/* Nuzzora — FAQ content */
+/* ChronoScent — FAQ content */
 export const faqs = [
   {
-    q: 'What is Nuzzora made from?',
-    a: 'The Den uses durable, food-safe HDPE. The pods use washable ripstop fabric and fleece, with securely stitched seams and a concealed zip pocket.',
+    q: 'What is ChronoScent made from?',
+    a: 'The base uses durable, food-safe polymer. The cartridges use washable fabric and felt cores, with securely stitched seams and a concealed scent pocket.',
   },
   {
-    q: 'Is the Den dishwasher safe?',
-    a: 'The hard Den base is dishwasher safe on the top rack. Remove the scent pods, warmth insert, and pulse disc before washing.',
+    q: 'Is the base dishwasher safe?',
+    a: 'The hard base unit is dishwasher safe on the top rack. Remove the scent cartridges, timed-release core, and pulse disc before washing.',
   },
   {
     q: 'Does it use batteries, Wi-Fi, or an app?',
-    a: 'No. The Den works mechanically, and the warmth insert and pulse disc require no app, battery, or internet connection.',
+    a: 'No. ChronoScent works mechanically, and the timed-release core and pulse disc require no app, battery, or internet connection.',
   },
   {
-    q: 'How long does training take?',
-    a: 'Many dogs can start with treats visible in the easiest chambers. Begin with short supervised sessions, then increase the difficulty as your dog learns the search pattern.',
+    q: 'How long does a scent cycle last?',
+    a: 'Many users can start with scent visible in the easiest chambers. Begin with short supervised sessions, then increase the difficulty as the scent pattern is learned.',
   },
   {
-    q: 'Can two dogs use it together?',
-    a: 'Yes, but introduce it with supervision. For households with dogs that guard food, use separate areas or provide one Den per dog.',
+    q: 'Can two pets use it together?',
+    a: 'Yes, but introduce it with supervision. For households with pets that guard resources, use separate areas or provide one base per pet.',
   },
   {
-    q: 'What if my dog is not food motivated?',
-    a: 'Use a favourite toy, safe chew, or a small amount of a high-value reward instead of ordinary treats. The scent search and owner-scent pocket can also provide interest without relying entirely on food.',
+    q: 'What if my pet is not scent motivated?',
+    a: 'Use a favourite toy, safe chew, or a small amount of a high-value reward instead of ordinary treats. The scent search and timed-release core can also provide interest without relying entirely on food.',
   },
   {
-    q: 'Is it safe to leave my dog alone with it?',
-    a: 'Check the Den and pods during initial sessions to make sure your dog does not tear, swallow, or aggressively chew any part. Remove damaged components and follow your veterinarian’s advice for your dog’s chewing habits.',
+    q: 'Is it safe to leave my pet alone with it?',
+    a: 'Check the base and cartridges during initial sessions to make sure your pet does not tear, swallow, or aggressively chew any part. Remove damaged components and follow your veterinarian’s advice for your pet’s chewing habits.',
   },
   {
     q: 'Is the scent wax safe?',

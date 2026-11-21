@@ -1,4 +1,4 @@
-/* Nuzzora — header / navigation component */
+/* ChronoScent — header / navigation component */
 import { cart } from '../store/cart.js';
 
 export function Header({ onRoute }) {
@@ -6,7 +6,7 @@ export function Header({ onRoute }) {
   header.className = 'site-header';
   header.innerHTML = `
     <div class="container header-inner">
-      <a href="#/" class="brand" data-link>Nuzzora</a>
+      <a href="#/" class="brand" data-link>ChronoScent</a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#/" class="nav-link" data-link>Home</a>
         <a href="#/shop" class="nav-link" data-link>Shop</a>
@@ -23,11 +23,9 @@ export function Header({ onRoute }) {
     countEl.textContent = cart.getItemCount();
   }
 
-  // update when cart changes elsewhere
   const updateCart = () => updateCount();
   window.addEventListener('cart:updated', updateCart);
 
-  // delegate nav clicks to router
   header.addEventListener('click', (e) => {
     const link = e.target.closest('a[data-link]');
     if (!link) return;

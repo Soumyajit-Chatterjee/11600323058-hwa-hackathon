@@ -1,5 +1,5 @@
 /* Nuzzora — cart store (localStorage backed, mock behaviour) */
-const STORAGE_KEY = 'nuzzora_cart';
+const STORAGE_KEY = 'chronoscent_cart';
 
 let items = [];
 try {
@@ -28,7 +28,7 @@ export const cart = {
     if (existing) {
       existing.qty += qty;
     } else {
-      const product = window.__NUZZORA_PRODUCTS__?.find((p) => p.id === productId);
+      const product = window.__CHRONOSENT_PRODUCTS__?.find((p) => p.id === productId);
       items.push({
         id: `${productId}-${variant}`,
         productId,

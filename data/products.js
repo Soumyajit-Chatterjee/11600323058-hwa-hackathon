@@ -1,25 +1,25 @@
-/* Nuzzora — product data */
+/* ChronoScent — product data */
 export const products = [
   {
     id: 'starter',
     name: 'Starter Kit',
     price: 3599,
     priceText: '₹3,599',
-    summary: 'For dogs beginning scent games.',
+    summary: 'For scent routines beginning.',
     description:
-      'Chew-resistant den base with reconfigurable puzzle chambers, plus 3 washable scent pods. Each pod holds a piece of your worn clothing and a treat. Pick your size below.',
-    includes: ['Chew-resistant den base', '3 washable scent pods', 'Small/medium or large'],
+      'ChronoScent base unit with programmable scent chambers, plus 3 washable scent cartridges. Each cartridge holds a scent core and a timed-release wick. Pick your size below.',
+    includes: ['ChronoScent base unit', '3 washable scent cartridges', 'Small/medium or large'],
     image: {
       w: 500,
       h: 500,
-      desc: 'Starter Kit: chew-resistant den base with three washable scent pods',
+      desc: 'Starter Kit: ChronoScent base with three washable scent cartridges',
       src: 'assets/Shop_Page_StarterKit_500x500.webp',
       fallbackSrc: 'assets/Shop_Page_StarterKit_500x500.png',
       gallerySrc: 'assets/Product_Page_StarterKit_420x560.jpg',
     },
     sizes: [
-      { label: 'Small / Medium', detail: 'Toy, small and medium breeds.' },
-      { label: 'Large', detail: 'Large and giant breeds with larger chambers and pod capacity.' },
+      { label: 'Small / Medium', detail: 'Compact chambers for personal spaces.' },
+      { label: 'Large', detail: 'Expanded chambers for larger rooms.' },
     ],
   },
   {
@@ -27,47 +27,47 @@ export const products = [
     name: 'Full Kit',
     price: 5399,
     priceText: '₹5,399',
-    summary: 'The complete Nuzzora setup.',
+    summary: 'The complete ChronoScent setup.',
     description:
-      'Chew-resistant den base, 6 washable scent pods, warmth insert, and the mechanical pulse disc. The dog returns to the warm den between hunts. Pick your size below.',
+      'ChronoScent base unit, 6 washable scent cartridges, timed-release core, and mechanical pulse disc. The scent returns between cycles. Pick your size below.',
     includes: [
-      'Chew-resistant den base',
-      '6 washable scent pods',
-      'Warmth insert + mechanical pulse disc',
+      'ChronoScent base unit',
+      '6 washable scent cartridges',
+      'Timed-release core + mechanical pulse disc',
       'Small/medium or large',
     ],
     image: {
       w: 500,
       h: 500,
-      desc: 'Full Kit: den base, six scent pods, warmth insert and mechanical pulse disc',
+      desc: 'Full Kit: ChronoScent base, six cartridges, timed-release core and pulse disc',
       src: 'assets/Shop_Page_FullKit_500x500.webp',
       fallbackSrc: 'assets/Shop_Page_FullKit_500x500.png',
       gallerySrc: 'assets/Product_Page_FullKit_420x560.jpg',
     },
     sizes: [
-      { label: 'Small / Medium', detail: 'Toy, small and medium breeds.' },
-      { label: 'Large', detail: 'Large and giant breeds with larger chambers and pod capacity.' },
+      { label: 'Small / Medium', detail: 'Compact chambers for personal spaces.' },
+      { label: 'Large', detail: 'Expanded chambers for larger rooms.' },
     ],
     ribbon: 'Mostly Bought',
   },
   {
     id: 'refill',
-    name: 'Trail Refill Pack',
+    name: 'Scent Refill Pack',
     price: 1499,
     priceText: '₹1,499',
-    summary: 'Extend the search around your home.',
+    summary: 'Extend the scent timeline.',
     description:
-      'Replaceable scent pods and reusable scent-wax sachets to lay a trail between pods. Compatible with both den sizes. Optional add-on for longer routes.',
-    includes: ['Replaceable scent pods', 'Reusable scent-wax sachets', 'Compatible with both den sizes'],
+      'Replaceable scent cartridges and reusable timed-release wicks to continue the cycle. Compatible with both base sizes. Optional add-on for longer scent runs.',
+    includes: ['Replaceable scent cartridges', 'Reusable timed-release wicks', 'Compatible with both base sizes'],
     image: {
       w: 500,
       h: 500,
-      desc: 'Trail Refill Pack: scent pods and reusable scent-wax sachets',
+      desc: 'Scent Refill Pack: cartridges and reusable timed-release wicks',
       src: 'assets/Shop_Page_TrailRefillPack_500x500.webp',
       fallbackSrc: 'assets/Shop_Page_TrailRefillPack_500x500.png',
       gallerySrc: 'assets/Product_Page_TrailRefillPack_420x560.jpg',
     },
-    sizes: [{ label: 'One size', detail: 'Works with both Small / Medium and Large dens.' }],
+    sizes: [{ label: 'One size', detail: 'Works with both Small / Medium and Large bases.' }],
   },
 ];
 
