@@ -29,11 +29,8 @@ export function Shop({ onRoute }) {
   });
 
   const sizeOptions = section.querySelector('.size-options');
-  const sizeData = [
-    { label: 'Small / Medium', detail: 'Compact chambers for personal spaces.' },
-    { label: 'Large', detail: 'Expanded chambers for larger rooms.' },
-  ];
-  sizeData.forEach((s) => {
+  const starter = products.find((p) => p.id === 'starter');
+  starter.sizes.forEach((s) => {
     const opt = document.createElement('div');
     opt.className = 'size-option';
     const strong = document.createElement('strong');

@@ -1,10 +1,13 @@
 /* ChronoScent — Landing page (hero + how it works + strips) */
+import { products, brandConfig } from '../data/products.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 import { Button } from '../components/Button.js';
 
 export function Landing({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page landing';
+
+  const starter = products.find((p) => p.id === 'starter');
 
   // --- Hero: badge + headline + buttons + visual ---
   const hero = document.createElement('section');
@@ -13,7 +16,7 @@ export function Landing({ onRoute }) {
     <div class="container hero-inner">
       <div class="hero-content">
         <span class="badge">Purely mechanical · No batteries · No Wi-Fi</span>
-        <h1 class="hero-headline">A dual-chamber chew toy for dogs left at home</h1>
+        <h1 class="hero-headline">A dual-chamber chew pod for dogs left at home</h1>
         <div class="hero-actions"></div>
       </div>
       <div class="hero-visual"></div>
@@ -55,7 +58,7 @@ export function Landing({ onRoute }) {
   subheadingStrip.className = 'subheading-strip';
   subheadingStrip.innerHTML = `
     <div class="container subheading-container">
-      <p class="hero-subheading">ChronoScent keeps dogs chewing, waiting and settling while their people are away.</p>
+      <p class="hero-subheading">${brandConfig.tagline}</p>
     </div>
   `;
 
@@ -76,23 +79,23 @@ export function Landing({ onRoute }) {
     {
       num: 1,
       title: 'Load',
-      text: 'Load the timed treat chamber. The staged release mechanism keeps food dispensing over time, so your dog stays engaged without batteries or app control.',
+      text: 'Load the timed treat chamber. The staged release mechanism keeps food dispensing over time, so your dog stays engaged without batteries or app control.'
     },
     {
       num: 2,
       title: 'Scent',
-      text: 'Insert a cotton scent strip with your worn clothing and the removable PCM warming disc into the separate warmth chamber. Your dog returns to familiar scent and gentle warmth between chew sessions.',
+      text: 'Insert a cotton scent strip with your worn clothing and the removable PCM warming disc into the separate warmth chamber. Your dog returns to familiar scent and gentle warmth between chew sessions.'
     },
     {
       num: 3,
       title: 'Chew',
-      text: 'Heavy duty, capsule shaped chew base with two isolated systems. Modular chambers rearrange as your dog improves.',
+      text: 'Heavy duty, capsule shaped chew pod with two isolated systems. Modular chambers rearrange as your dog improves.'
     },
     {
       num: 4,
       title: 'Settle',
-      text: 'Between cycles, your dog settles into the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.',
-    },
+      text: 'Between cycles, your dog settles into the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.'
+    }
   ];
 
   const grid = how.querySelector('.steps-grid');

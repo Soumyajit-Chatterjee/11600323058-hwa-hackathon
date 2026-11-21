@@ -1,17 +1,16 @@
 /* ChronoScent — footer component */
+import { brandConfig } from '../data/products.js';
+
 export function Footer() {
   const footer = document.createElement('footer');
   footer.className = 'site-footer';
   footer.innerHTML = `
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="brand">ChronoScent</span>
-        <p class="footer-line">Scent + timing. No batteries. No Wi-Fi. No app.</p>
+        <span class="brand">${brandConfig.name}</span>
+        <p class="footer-line">${brandConfig.tagline}</p>
       </div>
-      <p class="footer-notes">
-        ChronoScent is a purely mechanical timed scent system. Not a treat cam. Not a puzzle your pet solves once.
-        It turns your space into a timed scent cycle.
-      </p>
+      <p class="footer-notes">${brandConfig.footerNote}</p>
     </div>
   `;
   return { el: footer };

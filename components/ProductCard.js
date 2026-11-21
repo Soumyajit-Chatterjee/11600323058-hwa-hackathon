@@ -5,7 +5,7 @@ export function ProductCard({ product, onSelect }) {
   const card = document.createElement('article');
   card.className = 'card product-card';
 
-  // Ribbon badge (permanent on Full Kit)
+  // Ribbon badge (permanent on Full Kit / Refill)
   if (product.ribbon) {
     const ribbon = document.createElement('span');
     ribbon.className = 'kit-ribbon';
@@ -13,17 +13,55 @@ export function ProductCard({ product, onSelect }) {
     card.appendChild(ribbon);
   }
 
-  const tag = document.createElement('span');
-  tag.className = 'kit-tag';
-  tag.textContent = product.name === 'Scent Refill Pack' ? 'Add-on' : 'Starter';
+  // Subscription badge for refill pack
+  if (product.subscription) {
+    const subBadge = document.createElement('span');
+    subBadge.className = 'kit-tag sub-tag';
+    subBadge.textContent = 'Subscription';
+    card.appendChild(subBadge);
+  } else {
+    const tag = document.createElement('span');
+    tag.className = 'kit-tag';
+    tag.textContent = product.name === 'Scent Refill Pack' ? 'Add-on' : 'Starter';
+    card.appendChild(tag);
+  }
 
   const name = document.createElement('h3');
   name.className = 'card-title';
   name.textContent = product.name;
 
+  const type = document.createElement('p');
+  type.className = 'card-type';
+  type.textContent = product.productType;
+
+  // Price block with sale pricing
+  const priceWrap = document.createElement('div');
+  priceWrap.className = 'card-price-wrap';
+
   const price = document.createElement('p');
   price.className = 'card-price';
-  price.textContent = product.priceText;
+
+  if (product.subscription && product.salePrice) {
+    price.textContent = `₹${product.salePrice.toLocaleString()}/${product.billingCycle}`;
+  } else if (product.salePrice) {
+    price.textContent = `₹${product.salePrice.toLocaleString()}`;
+  } else {
+    price.textContent = `₹${product.price.toLocaleString()}`;
+  }
+
+  const origPrice = document.createElement('span');
+  origPrice.className = 'card-orig-price';
+
+  if (product.salePrice && product.salePrice < product.price) {
+    origPrice.textContent = `₹${product.price.toLocaleString()}`;
+    const saleTag = document.createElement('span');
+    saleTag.className = 'card-sale-tag';
+    saleTag.textContent = product.saleLabel;
+    priceWrap.appendChild(saleTag);
+  }
+
+  priceWrap.appendChild(origPrice);
+  priceWrap.appendChild(price);
 
   const desc = document.createElement('p');
   desc.className = 'card-desc';
@@ -49,7 +87,7 @@ export function ProductCard({ product, onSelect }) {
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.className = 'btn btn--primary btn--block';
-  btn.textContent = 'Choose this kit';
+  btn.textContent = product.subscription ? 'Subscribe' : 'Choose this kit';
   btn.addEventListener('click', () => {
     if (onSelect) onSelect(product);
   });
@@ -60,11 +98,11 @@ export function ProductCard({ product, onSelect }) {
     card.classList.add('highlighted');
   });
 
-  card.appendChild(tag);
-  card.appendChild(imgWrap);
   card.appendChild(name);
-  card.appendChild(price);
+  card.appendChild(type);
+  card.appendChild(priceWrap);
   card.appendChild(desc);
+  card.appendChild(imgWrap);
   card.appendChild(btn);
 
   return card;

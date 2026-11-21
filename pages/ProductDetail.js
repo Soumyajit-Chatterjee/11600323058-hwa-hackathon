@@ -1,5 +1,5 @@
 /* ChronoScent — Product details page */
-import { getProduct } from '../data/products.js';
+import { getProduct, brandConfig } from '../data/products.js';
 import { cart } from '../store/cart.js';
 import { Button } from '../components/Button.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
@@ -36,22 +36,45 @@ export function ProductDetail({ id, onRoute }) {
       </div>
       <div class="product-info">
         <h1 class="product-name">${product.name}</h1>
+        <p class="product-type">${product.productType}</p>
         <p class="product-summary">${product.summary}</p>
-        <p class="product-price">₹${product.price.toLocaleString()}</p>
+
+        <div class="product-price-wrap">
+          <p class="product-price">
+            ${product.subscription
+              ? `₹${product.salePrice.toLocaleString()}/${product.billingCycle}`
+              : `₹${product.salePrice?.toLocaleString() || product.price.toLocaleString()}`}
+          </p>
+          ${product.salePrice && product.salePrice < product.price
+            ? `<span class="product-orig-price">₹${product.price.toLocaleString()}</span>
+               <span class="product-sale-tag">${product.saleLabel}</span>`
+            : ''}
+        </div>
+
         <p class="product-desc">${product.description}</p>
+
+        <h3 class="pick-materials">Materials</h3>
+        <ul class="materials-list"></ul>
+
+        <h3 class="pick-suitability">Suitable for</h3>
+        <div class="suitability-list"></div>
 
         <h3 class="pick-size">Pick your size</h3>
         <div class="size-selector" aria-label="Size" role="radiogroup"></div>
 
+        ${!product.subscription ? `
         <h3 class="pick-qty">Quantity</h3>
         <div class="qty-control" aria-label="Quantity">
           <button type="button" class="qty-btn qty--minus" aria-label="Decrease quantity">−</button>
           <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Quantity" />
           <button type="button" class="qty-btn qty--plus" aria-label="Increase quantity">+</button>
         </div>
+        ` : ''}
 
         <div class="product-actions">
-          <button type="button" class="btn btn--primary btn--block add-to-cart">Add to cart</button>
+          <button type="button" class="btn btn--primary btn--block add-to-cart">
+            ${product.subscription ? 'Subscribe' : 'Add to cart'}
+          </button>
           <button type="button" class="btn btn--outline btn--block view-cart">View cart</button>
         </div>
         <p class="feedback" role="status" aria-live="polite"></p>
@@ -59,6 +82,11 @@ export function ProductDetail({ id, onRoute }) {
         <div class="product-includes">
           <h4>Includes</h4>
           <ul class="includes-list"></ul>
+        </div>
+
+        <div class="product-safety">
+          <h4>Safety &amp; care</h4>
+          <p>${product.safetyNotes}</p>
         </div>
       </div>
     </div>
@@ -93,33 +121,60 @@ export function ProductDetail({ id, onRoute }) {
     window.__SELECTED_SIZE__ = product.sizes[0].label;
   }
 
-  let qty = 1;
-  const qtyInput = section.querySelector('.qty-input');
-  section.querySelector('.qty--minus').addEventListener('click', () => {
-    if (qty > 1) { qty--; qtyInput.value = qty; }
-  });
-  section.querySelector('.qty--plus').addEventListener('click', () => {
-    if (qty < 10) { qty++; qtyInput.value = qty; }
-  });
-  qtyInput.addEventListener('change', () => {
-    const v = parseInt(qtyInput.value, 10) || 1;
-    qty = Math.max(1, Math.min(10, v));
-    qtyInput.value = qty;
-  });
+  if (!product.subscription) {
+    let qty = 1;
+    const qtyInput = section.querySelector('.qty-input');
+    section.querySelector('.qty--minus').addEventListener('click', () => {
+      if (qty > 1) { qty--; qtyInput.value = qty; }
+    });
+    section.querySelector('.qty--plus').addEventListener('click', () => {
+      if (qty < 10) { qty++; qtyInput.value = qty; }
+    });
+    qtyInput.addEventListener('change', () => {
+      const v = parseInt(qtyInput.value, 10) || 1;
+      qty = Math.max(1, Math.min(10, v));
+      qtyInput.value = qty;
+    });
+  }
 
   const feedback = section.querySelector('.feedback');
   const addBtn = section.querySelector('.add-to-cart');
   addBtn.addEventListener('click', () => {
     const size = window.__SELECTED_SIZE__ || product.sizes[0]?.label || 'Small / Medium';
     const variant = size;
-    cart.add(product.id, variant, qty);
+    cart.add(product.id, variant, product.subscription ? 1 : 1);
     window.dispatchEvent(new Event('cart:updated'));
-    feedback.textContent = `Added ${qty} × ${product.name} (${size}) to cart.`;
+    feedback.textContent = product.subscription
+      ? `Subscribed to ${product.name} (${size}) — ₹${product.salePrice.toLocaleString()}/${product.billingCycle}`
+      : `Added ${qty} × ${product.name} (${size}) to cart.`;
     setTimeout(() => { feedback.textContent = ''; }, 2500);
   });
 
   section.querySelector('.view-cart').addEventListener('click', () => onRoute('#/cart'));
 
+  // Materials list
+  const materialsList = section.querySelector('.materials-list');
+  product.materials.forEach((mat) => {
+    const li = document.createElement('li');
+    li.textContent = mat;
+    materialsList.appendChild(li);
+  });
+
+  // Suitability list
+  const suitabilityList = section.querySelector('.suitability-list');
+  product.suitability.forEach((s) => {
+    const item = document.createElement('div');
+    item.className = 'suitability-item';
+    const strong = document.createElement('strong');
+    strong.textContent = s.label;
+    const p = document.createElement('p');
+    p.textContent = s.detail;
+    item.appendChild(strong);
+    item.appendChild(p);
+    suitabilityList.appendChild(item);
+  });
+
+  // Includes list
   product.includes.forEach((item) => {
     const li = document.createElement('li');
     li.textContent = item;
