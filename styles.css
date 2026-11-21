@@ -128,7 +128,7 @@ button {
 .site-header {
   position: sticky;
   top: 0;
-  background: var(--color-dark);
+  background: var(--color-accent);
   z-index: 50;
 }
 
@@ -143,7 +143,7 @@ button {
   font-weight: 900;
   font-size: 1.35rem;
   letter-spacing: 0.5px;
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
 }
 
 .nav-links {
@@ -154,14 +154,14 @@ button {
 
 .nav-links a {
   font-size: 0.95rem;
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
   font-weight: 500;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .nav-links a:hover {
   opacity: 1;
-  color: var(--color-secondary);
+  color: var(--color-dark);
 }
 
 /* ---------- Buttons ---------- */
@@ -229,7 +229,7 @@ button {
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: var(--color-primary);
+  background: var(--color-dark);
   color: var(--color-text-light);
   border-radius: 50%;
   font-size: 0.75rem;
@@ -245,7 +245,7 @@ button {
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: var(--color-primary);
+  background: var(--color-dark);
   color: var(--color-text-light);
   border-radius: 50%;
   font-size: 0.75rem;
