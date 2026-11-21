@@ -192,9 +192,50 @@ button {
   margin-left: 6px;
 }
 
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 60;
+}
+
+.menu-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-light);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.nav-links.nav--open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-dark);
+  padding: 16px 20px;
+  gap: 16px;
+  border-top: 1px solid rgba(253, 255, 252, 0.15);
+}
+
 /* ---------- Pages ---------- */
 .page {
   min-height: 60vh;
+  padding: 40px 0;
 }
 
 /* ---------- Hero ---------- */
@@ -270,6 +311,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
 }
 
 .visual-caption {
@@ -278,6 +320,9 @@ button {
   font-size: 0.85rem;
   color: var(--color-secondary);
   font-weight: 600;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ---------- Section headers ---------- */
@@ -479,11 +524,18 @@ button {
   color: #555;
   font-size: 0.85rem;
   text-align: center;
-  padding: 12px;
+  padding: 20px 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .placeholder-img[role="img"] {
   cursor: default;
+}
+
+.placeholder-img > div {
+  max-width: 100%;
 }
 
 .gallery-placeholder {
@@ -651,8 +703,8 @@ button {
 .product-actions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .feedback {
@@ -863,7 +915,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
@@ -1093,6 +1145,23 @@ button {
 
   .nav-links {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-dark);
+    padding: 16px 20px;
+    gap: 16px;
+    border-top: 1px solid rgba(253, 255, 252, 0.15);
+  }
+
+  .nav-links.nav--open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 
   .hero-headline {

@@ -76,7 +76,12 @@ function onRouteChange() {
   const { route, params } = resolveRoute(hash);
 
   setTitle(route.title);
-  mountPage(route.page, { onRoute: navigate, ...(params.length ? { id: params[0] } : {}) });
+  const pageParams = params.length
+    ? route.page === Confirmation
+      ? { orderId: params[0] }
+      : { id: params[0] }
+    : {};
+  mountPage(route.page, { onRoute: navigate, ...pageParams });
 }
 
 function navigate(href) {

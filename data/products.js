@@ -43,9 +43,9 @@ export const products = [
     priceText: '₹1,499',
     summary: 'Extend the search around your home.',
     description:
-      'Replaceable scent pods and reusable scent wax sachets to lay a trail between pods. Compatible with both den sizes. Optional add-on for longer routes.',
-    includes: ['Replaceable scent pods', 'Reusable scent wax sachets', 'Compatible with both den sizes'],
-    image: { w: 500, h: 500, desc: 'Trail Refill Pack: scent pods and reusable wax sachets' },
+      'Replaceable scent pods and reusable scent-wax sachets to lay a trail between pods. Compatible with both den sizes. Optional add-on for longer routes.',
+    includes: ['Replaceable scent pods', 'Reusable scent-wax sachets', 'Compatible with both den sizes'],
+    image: { w: 500, h: 500, desc: 'Trail Refill Pack: scent pods and reusable scent-wax sachets' },
     sizes: [{ label: 'One size', detail: 'Works with both Small / Medium and Large dens.' }],
   },
 ];

@@ -12,10 +12,10 @@ export function Landing({ onRoute }) {
   hero.innerHTML = `
     <div class="container hero-inner">
       <div class="hero-content">
-        <span class="badge">Purely mechanical · No batteries · No WiFi</span>
-        <h1 class="hero-headline">A whole house adventure with an essence of you at the center</h1>
+        <span class="badge">Purely mechanical · No batteries · No Wi-Fi</span>
+        <h1 class="hero-headline">A whole house adventure with a little bit of you at the center</h1>
         <p class="hero-subheading">Nuzzora keeps dogs searching, solving and settling while their people are away.</p>
-        <p class="hero-body">Hide the pods. Set the puzzle. Leave a scent behind and a warm place to return to. No batteries, WiFi or live check-ins required.</p>
+        <p class="hero-body">Hide the pods. Set the puzzle. Leave a scent behind and a warm place to return to. No batteries, Wi-Fi or live check-ins required.</p>
         <div class="hero-actions"></div>
       </div>
       <div class="hero-visual"></div>
@@ -78,12 +78,12 @@ export function Landing({ onRoute }) {
     {
       num: 3,
       title: 'Solve',
-      text: 'Lay a path between pods with reusable scent wax sachets. It\'s an optional add-on for dogs who enjoy a longer route and more searching.',
+      text: 'Lay a path between pods with reusable scent-wax sachets. It\'s an optional add-on for dogs who enjoy a longer route and more searching.',
     },
     {
       num: 4,
-      title: 'Recatch',
-      text: 'Between hunts, your dog can come back to the den\'s warmth insert and mechanical pulse disc. A familiar resting point without electronics or any hazardous items.',
+      title: 'Rest',
+      text: 'Between hunts, your dog can come back to the den\'s warmth insert and mechanical pulse disc. A familiar resting point.',
     },
   ];
 

@@ -78,9 +78,38 @@ export function Checkout({ onRoute }) {
   const form = section.querySelector('#checkout-form');
   const errorEl = section.querySelector('#checkout-error');
 
+  function showFieldError(fieldId, message) {
+    const field = section.querySelector(`#${fieldId}`);
+    errorEl.textContent = message;
+    if (field) {
+      field.focus();
+      field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    return false;
+  }
+
+  function validateForm() {
+    const name = section.querySelector('#checkout-name').value.trim();
+    const email = section.querySelector('#checkout-email').value.trim();
+    const phone = section.querySelector('#checkout-phone').value.trim();
+    const address = section.querySelector('#checkout-address').value.trim();
+
+    if (!name) return showFieldError('checkout-name', 'Please enter your full name.');
+    if (!email) return showFieldError('checkout-email', 'Please enter your email address.');
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(email)) return showFieldError('checkout-email', 'Please enter a valid email address.');
+    if (!phone) return showFieldError('checkout-phone', 'Please enter your phone number.');
+    if (!address) return showFieldError('checkout-address', 'Please enter your address.');
+
+    errorEl.textContent = '';
+    return true;
+  }
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     errorEl.textContent = '';
+
+    if (!validateForm()) return;
 
     const formData = new FormData(form);
     const order = {

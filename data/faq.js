@@ -2,7 +2,7 @@
 export const faqs = [
   {
     q: 'Is Nuzzora electronic?',
-    a: 'No. Nuzzora is purely mechanical — no batteries, no WiFi, no app, and no live check-ins.',
+    a: 'No. Nuzzora is purely mechanical — no batteries, no Wi-Fi, no app, and no live check-ins.',
   },
   {
     q: 'How does the ratchet release work?',
@@ -14,7 +14,7 @@ export const faqs = [
   },
   {
     q: 'Are the scent sachets optional?',
-    a: 'Yes. The reusable scent wax sachets are an optional add-on for dogs that enjoy a longer trail and more searching.',
+    a: 'Yes. The reusable scent-wax sachets are an optional add-on for dogs that enjoy a longer trail and more searching.',
   },
   {
     q: 'Which size should I choose?',
@@ -22,7 +22,7 @@ export const faqs = [
   },
   {
     q: 'Does it need a power outlet or app?',
-    a: 'No. There are no batteries, no WiFi, and no harmful electricity exposure. The warmth insert and pulse disc are purely mechanical.',
+    a: 'No. There are no batteries, no Wi-Fi, and no harmful electricity exposure. The warmth insert and pulse disc are purely mechanical.',
   },
   {
     q: 'Can I add more pods later?',

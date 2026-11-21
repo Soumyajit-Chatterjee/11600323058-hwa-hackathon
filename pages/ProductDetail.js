@@ -111,7 +111,7 @@ export function ProductDetail({ id, onRoute }) {
   const addBtn = section.querySelector('.add-to-cart');
   addBtn.addEventListener('click', () => {
     const size = window.__SELECTED_SIZE__ || product.sizes[0]?.label || 'Small / Medium';
-    const variant = `${product.name} — ${size}`;
+    const variant = size;
     cart.add(product.id, variant, qty);
     window.dispatchEvent(new Event('cart:updated'));
     feedback.textContent = `Added ${qty} × ${product.name} (${size}) to cart.`;
