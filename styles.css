@@ -241,7 +241,7 @@ button {
 
 /* Mobile menu toggle */
 .menu-toggle {
-  display: none;
+  display: none !important;
   flex-direction: column;
   gap: 5px;
   background: transparent;
