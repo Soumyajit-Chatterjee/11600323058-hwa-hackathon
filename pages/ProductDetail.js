@@ -29,63 +29,72 @@ export function ProductDetail({ id, onRoute }) {
 
   section.innerHTML = `
     <div class="container product-container">
-      <div class="product-gallery">
-        <div class="gallery-placeholder">
-          ${PlaceholderImg({
-            w: product.image.galleryW || product.image.w,
-            h: product.image.galleryH || product.image.h,
-            desc: product.image.galleryDesc || product.image.desc,
-            className: 'gallery-img',
-            src: product.image.gallerySrc || product.image.src,
-            loading: 'eager',
-            decoding: 'async',
-            fit: 'contain',
-            fetchPriority: 'high'
-          }).outerHTML}
+      <!-- Top section: gallery + product info side by side -->
+      <div class="product-top">
+        <div class="product-gallery">
+          <div class="gallery-placeholder">
+            ${PlaceholderImg({
+              w: product.image.galleryW || product.image.w,
+              h: product.image.galleryH || product.image.h,
+              desc: product.image.galleryDesc || product.image.desc,
+              className: 'gallery-img',
+              src: product.image.gallerySrc || product.image.src,
+              loading: 'eager',
+              decoding: 'async',
+              fit: 'contain',
+              fetchPriority: 'high'
+            }).outerHTML}
+          </div>
+        </div>
+        <div class="product-info">
+          <h1 class="product-name">${product.name}</h1>
+          <p class="product-type">${product.productType}</p>
+          <p class="product-summary">${product.summary}</p>
+
+          <div class="product-price-wrap">
+            <p class="product-price">
+              ${product.subscription
+                ? `₹${product.salePrice.toLocaleString()}/${product.billingCycle}`
+                : `₹${product.salePrice?.toLocaleString() || product.price.toLocaleString()}`}
+            </p>
+            ${product.salePrice && product.salePrice < product.price
+              ? `<span class="product-orig-price">₹${product.price.toLocaleString()}</span>
+                 <span class="product-sale-tag">${product.saleLabel}</span>`
+              : ''}
+          </div>
+
+          <p class="product-desc">${product.description}</p>
+
+          <h3 class="pick-materials">Materials</h3>
+          <ul class="materials-list"></ul>
+
+          <h3 class="pick-size">Pick your size</h3>
+          <div class="size-selector" aria-label="Size" role="radiogroup"></div>
+
+          ${!product.subscription ? `
+          <h3 class="pick-qty">Quantity</h3>
+          <div class="qty-control" aria-label="Quantity">
+            <button type="button" class="qty-btn qty--minus" aria-label="Decrease quantity">−</button>
+            <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Quantity" />
+            <button type="button" class="qty-btn qty--plus" aria-label="Increase quantity">+</button>
+          </div>
+          ` : ''}
+
+          <div class="product-actions">
+            <button type="button" class="btn btn--primary btn--block add-to-cart">
+              ${product.subscription ? 'Subscribe' : 'Add to cart'}
+            </button>
+            <button type="button" class="btn btn--outline btn--block view-cart">View cart</button>
+          </div>
+          <p class="feedback" role="status" aria-live="polite"></p>
         </div>
       </div>
-      <div class="product-info">
-        <h1 class="product-name">${product.name}</h1>
-        <p class="product-type">${product.productType}</p>
-        <p class="product-summary">${product.summary}</p>
 
-        <div class="product-price-wrap">
-          <p class="product-price">
-            ${product.subscription
-              ? `₹${product.salePrice.toLocaleString()}/${product.billingCycle}`
-              : `₹${product.salePrice?.toLocaleString() || product.price.toLocaleString()}`}
-          </p>
-          ${product.salePrice && product.salePrice < product.price
-            ? `<span class="product-orig-price">₹${product.price.toLocaleString()}</span>
-               <span class="product-sale-tag">${product.saleLabel}</span>`
-            : ''}
-        </div>
+      <!-- Full width divider separating top section from details below -->
+      <div class="product-divider"></div>
 
-        <p class="product-desc">${product.description}</p>
-
-        <h3 class="pick-materials">Materials</h3>
-        <ul class="materials-list"></ul>
-
-        <h3 class="pick-size">Pick your size</h3>
-        <div class="size-selector" aria-label="Size" role="radiogroup"></div>
-
-        ${!product.subscription ? `
-        <h3 class="pick-qty">Quantity</h3>
-        <div class="qty-control" aria-label="Quantity">
-          <button type="button" class="qty-btn qty--minus" aria-label="Decrease quantity">−</button>
-          <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Quantity" />
-          <button type="button" class="qty-btn qty--plus" aria-label="Increase quantity">+</button>
-        </div>
-        ` : ''}
-
-        <div class="product-actions">
-          <button type="button" class="btn btn--primary btn--block add-to-cart">
-            ${product.subscription ? 'Subscribe' : 'Add to cart'}
-          </button>
-          <button type="button" class="btn btn--outline btn--block view-cart">View cart</button>
-        </div>
-        <p class="feedback" role="status" aria-live="polite"></p>
-
+      <!-- Product details — spread out full width below the divider -->
+      <div class="product-details">
         <div class="product-includes">
           <h4>Includes</h4>
           <ul class="includes-list"></ul>
@@ -98,51 +107,58 @@ export function ProductDetail({ id, onRoute }) {
 
         <!-- Detailed product explainer sections -->
         ${product.details ? `
-        <div class="product-details">
-          <h2 class="section-title">Product details</h2>
-
-          <div class="detail-section card">
+        <div class="product-details-grid">
+          <div class="detail-section card" style="--accent: var(--color-accent);">
+            <div class="detail-badge">01</div>
             <h3 class="card-title">Chew resistant outer body</h3>
             <p class="card-desc">${product.details.outerBody}</p>
           </div>
 
-          <div class="detail-section card">
+          <div class="detail-section card" style="--accent: var(--color-primary);">
+            <div class="detail-badge">02</div>
             <h3 class="card-title">Chrono-Treat chamber</h3>
             <p class="card-desc">${product.details.treatChamber}</p>
           </div>
 
-          <div class="detail-section card">
+          <div class="detail-section card" style="--accent: var(--color-secondary);">
+            <div class="detail-badge">03</div>
             <h3 class="card-title">Thermo-Scent core</h3>
             <p class="card-desc">${product.details.scentCore}</p>
           </div>
 
-          <div class="detail-section card">
+          <div class="detail-section card" style="--accent: var(--color-dark);">
+            <div class="detail-badge">04</div>
             <h3 class="card-title">Two isolated chambers</h3>
             <p class="card-desc">${product.details.isolation}</p>
           </div>
 
-          <div class="detail-section card">
+          <div class="detail-section card" style="--accent: var(--color-accent);">
+            <div class="detail-badge">05</div>
             <h3 class="card-title">How to prepare before you leave</h3>
             <p class="card-desc">${product.details.preparation}</p>
           </div>
 
-          <div class="detail-section card">
+          <div class="detail-section card" style="--accent: var(--color-primary);">
+            <div class="detail-badge">06</div>
             <h3 class="card-title">Your dog’s experience over time</h3>
             <p class="card-desc">${product.details.experience}</p>
           </div>
 
-          <div class="detail-section card">
+          <div class="detail-section card" style="--accent: var(--color-secondary);">
+            <div class="detail-badge">07</div>
             <h3 class="card-title">Refill items available</h3>
             <p class="card-desc">${product.details.refillItems}</p>
           </div>
 
-          <div class="detail-section card">
+          <div class="detail-section card" style="--accent: var(--color-dark);">
+            <div class="detail-badge">08</div>
             <h3 class="card-title">Cartridge formulations</h3>
             <p class="card-desc">${product.details.cartridgeFormulations}</p>
           </div>
 
           ${product.details.timeline ? `
           <div class="timeline-section card">
+            <div class="detail-badge">T</div>
             <h3 class="card-title">${product.details.timeline.title}</h3>
             <p class="card-desc timeline-disclaimer">${product.details.timeline.disclaimer}</p>
             <div class="timeline-grid">
