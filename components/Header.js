@@ -6,11 +6,6 @@ export function Header({ onRoute }) {
   header.className = 'site-header';
   header.innerHTML = `
     <div class="container header-inner">
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="menu-bar"></span>
-        <span class="menu-bar"></span>
-        <span class="menu-bar"></span>
-      </button>
       <a href="#/" class="brand" data-link>Nuzzora</a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#/" class="nav-link" data-link>Home</a>
@@ -23,26 +18,10 @@ export function Header({ onRoute }) {
   `;
 
   const countEl = header.querySelector('.cart-count');
-  const menuToggle = header.querySelector('.menu-toggle');
-  const navLinks = header.querySelector('.nav-links');
 
   function updateCount() {
     countEl.textContent = cart.getItemCount();
   }
-
-  function toggleMenu() {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!expanded));
-    navLinks.classList.toggle('nav--open', !expanded);
-  }
-
-  menuToggle.addEventListener('click', toggleMenu);
-
-  // close menu when a link is clicked
-  navLinks.addEventListener('click', () => {
-    menuToggle.setAttribute('aria-expanded', 'false');
-    navLinks.classList.remove('nav--open');
-  });
 
   // update when cart changes elsewhere
   const updateCart = () => updateCount();
@@ -61,13 +40,6 @@ export function Header({ onRoute }) {
 
   updateCount();
 
-  const cleanup = () => {
-    window.removeEventListener('cart:updated', updateCart);
-    menuToggle.removeEventListener('click', toggleMenu);
-    navLinks.removeEventListener('click', () => {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      navLinks.classList.remove('nav--open');
-    });
-  };
+  const cleanup = () => window.removeEventListener('cart:updated', updateCart);
   return { el: header, cleanup };
 }
