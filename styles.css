@@ -1794,6 +1794,29 @@ button {
   border: 1px solid var(--color-accent);
 }
 
+/* Rugged technical visual language for ChronoScent product imagery */
+.card-image {
+  border: 2px solid var(--color-border);
+  border-radius: calc(var(--radius) - 2px);
+  overflow: hidden;
+  background: #e8e8dc;
+}
+
+.card-image img {
+  filter: contrast(1.05) saturate(1.02);
+}
+
+.placeholder-img {
+  border: 2px solid var(--color-border);
+  border-radius: calc(var(--radius) - 2px);
+  background: #e8e8dc;
+  border-style: dashed;
+}
+
+.hero-card img {
+  filter: contrast(1.05) saturate(1.02);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .hero-inner {

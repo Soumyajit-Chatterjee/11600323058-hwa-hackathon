@@ -41,7 +41,7 @@ export const products = [
     image: {
       w: 500,
       h: 500,
-      desc: 'Starter Kit: ChronoScent dual-chamber chew base with two timed treat cartridges, PCM warming disc and cotton scent strips',
+      desc: 'ChronoScent starter kit: rugged moulded rubber chew base with two isolated chambers, removable PCM warming disc, cotton scent strips, and edible treat cartridges arranged together',
       src: 'assets/Shop_Page_StarterKit_500x500.webp',
       fallbackSrc: 'assets/Shop_Page_StarterKit_500x500.png',
       gallerySrc: 'assets/Product_Page_StarterKit_420x560.jpg'
@@ -64,28 +64,28 @@ export const products = [
           {
             title: 'Start',
             desc: 'A smear or immediate treat reward on the surface encourages initial interest and first contact with the chew base.',
-            imageDesc: 'Timeline start: smear reward on chew base surface',
+            imageDesc: 'Timeline start: smear reward on ChronoScent chew base surface',
             imageSrc: 'assets/Home_Page_Main_Image_500x520.webp',
             imageFallback: 'assets/Home_Page_Main_Image_500x520.png'
           },
           {
             title: 'Middle',
             desc: 'A protected treat stage becomes available after chewing and saliva gradually affect the edible barrier, releasing rewards gradually.',
-            imageDesc: 'Timeline middle: protected treat stage after chewing',
+            imageDesc: 'Timeline middle: protected treat stage after chewing on ChronoScent base',
             imageSrc: 'assets/Shop_Page_StarterKit_500x500.webp',
             imageFallback: 'assets/Shop_Page_StarterKit_500x500.png'
           },
           {
             title: 'Later',
             desc: 'A final reward is intended to appear after the dog has spent more time with the toy, encouraging extended engagement.',
-            imageDesc: 'Timeline later: final reward after extended engagement',
+            imageDesc: 'Timeline later: final reward after extended engagement with ChronoScent chew base',
             imageSrc: 'assets/Shop_Page_FullKit_500x500.webp',
             imageFallback: 'assets/Shop_Page_FullKit_500x500.png'
           },
           {
             title: 'Throughout',
             desc: 'The separate scent chamber provides familiar owner scent and gentle warmth from the PCM warming disc between chew sessions.',
-            imageDesc: 'Timeline throughout: scent chamber with owner scent and warmth',
+            imageDesc: 'Timeline throughout: scent chamber with owner scent and PCM warming disc',
             imageSrc: 'assets/Shop_Page_TrailRefillPack_500x500.webp',
             imageFallback: 'assets/Shop_Page_TrailRefillPack_500x500.png'
           }
@@ -123,7 +123,7 @@ export const products = [
     image: {
       w: 500,
       h: 500,
-      desc: 'Scent Refill Pack: eight timed treat cartridges and four cotton scent strips',
+      desc: 'ChronoScent scent refill pack: eight edible timed treat cartridges and four cotton scent strips for the dual-chamber chew base',
       src: 'assets/Shop_Page_TrailRefillPack_500x500.webp',
       fallbackSrc: 'assets/Shop_Page_TrailRefillPack_500x500.png',
       gallerySrc: 'assets/Product_Page_TrailRefillPack_420x560.jpg'

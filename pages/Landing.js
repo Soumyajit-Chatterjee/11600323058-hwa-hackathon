@@ -46,7 +46,7 @@ export function Landing({ onRoute }) {
     PlaceholderImg({
       w: 500,
       h: 520,
-      desc: 'ChronoScent dual-chamber chew base, scent cartridges, and timed-release wicks arranged together',
+      desc: 'ChronoScent dual-chamber chew base: rugged moulded rubber with tactile ridges, removable PCM warming disc, cotton scent strips, and edible treat cartridges',
       src: 'assets/Home_Page_Main_Image_500x520.webp',
       fallbackSrc: 'assets/Home_Page_Main_Image_500x520.png',
       srcSet: 'assets/Home_Page_Main_Image_380x396.webp 380w, assets/Home_Page_Main_Image_500x520.webp 500w',
