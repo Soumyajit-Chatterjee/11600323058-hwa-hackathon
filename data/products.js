@@ -34,7 +34,7 @@ export const products = [
       { label: 'Small / Medium', detail: 'Toy, small and medium breeds.' },
       { label: 'Large', detail: 'Large and giant breeds with larger chambers and pod capacity.' },
     ],
-    featured: true,
+    ribbon: 'Mostly Bought',
   },
   {
     id: 'refill',

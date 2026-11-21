@@ -4,11 +4,18 @@ import { PlaceholderImg } from '../components/PlaceholderImg.js';
 export function ProductCard({ product, onSelect }) {
   const card = document.createElement('article');
   card.className = 'card product-card';
-  if (product.featured) card.classList.add('featured');
+
+  // Ribbon badge (permanent on Full Kit)
+  if (product.ribbon) {
+    const ribbon = document.createElement('span');
+    ribbon.className = 'kit-ribbon';
+    ribbon.textContent = product.ribbon;
+    card.appendChild(ribbon);
+  }
 
   const tag = document.createElement('span');
   tag.className = 'kit-tag';
-  tag.textContent = product.featured ? 'Best value' : product.name === 'Trail Refill Pack' ? 'Add-on' : 'Starter';
+  tag.textContent = product.name === 'Trail Refill Pack' ? 'Add-on' : 'Starter';
 
   const name = document.createElement('h3');
   name.className = 'card-title';
@@ -39,6 +46,12 @@ export function ProductCard({ product, onSelect }) {
   btn.textContent = 'Choose this kit';
   btn.addEventListener('click', () => {
     if (onSelect) onSelect(product);
+  });
+
+  // Hover-to-highlight: highlight this card on mouseenter, remove on mouseleave
+  card.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.product-card').forEach((c) => c.classList.remove('highlighted'));
+    card.classList.add('highlighted');
   });
 
   card.appendChild(tag);
