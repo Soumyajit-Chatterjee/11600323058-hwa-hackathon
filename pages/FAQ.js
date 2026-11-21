@@ -1,4 +1,4 @@
-/* Nuzzora — FAQ page */
+/* ChronoScent — FAQ page */
 import { faqs } from '../data/faq.js';
 import { Button } from '../components/Button.js';
 
@@ -11,7 +11,7 @@ export function FAQ({ onRoute }) {
     <div class="container">
       <header class="section-header page-header">
         <h1 class="section-title">Frequently asked questions</h1>
-        <p class="section-intro">Quick answers about Nuzzora.</p>
+        <p class="section-intro">Quick answers about ChronoScent.</p>
       </header>
       <div class="faq-accordion" aria-label="FAQs"></div>
       <p class="btn-container" style="margin-top: 32px;">

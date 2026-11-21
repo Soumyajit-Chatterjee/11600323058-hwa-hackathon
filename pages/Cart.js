@@ -1,4 +1,4 @@
-/* Nuzzora — Cart page */
+/* ChronoScent — Cart page */
 import { cart } from '../store/cart.js';
 import { Button } from '../components/Button.js';
 import { PlaceholderImg } from '../components/PlaceholderImg.js';

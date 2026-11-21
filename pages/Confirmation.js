@@ -1,4 +1,4 @@
-/* Nuzzora — Confirmation page */
+/* ChronoScent — Confirmation page */
 import { Button } from '../components/Button.js';
 
 export function Confirmation({ orderId, onRoute }) {
@@ -39,7 +39,7 @@ export function Confirmation({ orderId, onRoute }) {
         })()}
         <h1 class="section-title">Order confirmed</h1>
         <p class="confirmation-id">Order #${match.id}</p>
-        <p>Thank you. Your Nuzzora order has been placed (mock checkout — no real payment was processed).</p>
+        <p>Thank you. Your ChronoScent order has been placed (mock checkout — no real payment was processed).</p>
       </div>
 
       <div class="confirmation-details">

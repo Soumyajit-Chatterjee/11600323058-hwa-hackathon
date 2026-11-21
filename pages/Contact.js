@@ -1,4 +1,4 @@
-/* Nuzzora — Contact Us page (work under progress) */
+/* ChronoScent — Contact Us page (work under progress) */
 export function Contact({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page contact';

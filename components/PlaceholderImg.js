@@ -1,4 +1,4 @@
-/* Nuzzora — reusable image component (optimized for web performance) */
+/* ChronoScent — reusable image component (optimized for web performance) */
 export function PlaceholderImg({
   w,
   h,

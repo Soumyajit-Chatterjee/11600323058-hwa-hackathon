@@ -13,7 +13,7 @@ export function Landing({ onRoute }) {
     <div class="container hero-inner">
       <div class="hero-content">
         <span class="badge">Purely mechanical · No batteries · No Wi-Fi</span>
-        <h1 class="hero-headline">A whole home cycle with a trace of you at the center</h1>
+        <h1 class="hero-headline">A dual-chamber chew toy for dogs left at home</h1>
         <div class="hero-actions"></div>
       </div>
       <div class="hero-visual"></div>
@@ -39,7 +39,7 @@ export function Landing({ onRoute }) {
     PlaceholderImg({
       w: 500,
       h: 520,
-      desc: 'ChronoScent base unit, scent cartridges, and timed-release wicks arranged together',
+      desc: 'ChronoScent dual-chamber chew base, scent cartridges, and timed-release wicks arranged together',
       src: 'assets/Home_Page_Main_Image_500x520.webp',
       fallbackSrc: 'assets/Home_Page_Main_Image_500x520.png',
       srcSet: 'assets/Home_Page_Main_Image_380x396.webp 380w, assets/Home_Page_Main_Image_500x520.webp 500w',
@@ -55,7 +55,7 @@ export function Landing({ onRoute }) {
   subheadingStrip.className = 'subheading-strip';
   subheadingStrip.innerHTML = `
     <div class="container subheading-container">
-      <p class="hero-subheading">ChronoScent keeps pets searching, solving and settling while their people are away.</p>
+      <p class="hero-subheading">ChronoScent keeps dogs chewing, waiting and settling while their people are away.</p>
     </div>
   `;
 
@@ -75,23 +75,23 @@ export function Landing({ onRoute }) {
   const steps = [
     {
       num: 1,
-      title: 'Set',
-      text: 'A chew-resistant base with scent chambers you can rearrange as your pet improves. Its timed release makes scent unpredictable, so every attempt feels different.',
+      title: 'Load',
+      text: 'Load the timed treat chamber. The staged release mechanism keeps food dispensing over time, so your dog stays engaged without batteries or app control.',
     },
     {
       num: 2,
-      title: 'Hide',
-      text: 'Hide five or six washable cartridges around the home. Each holds a timed-release core and a scent, turning your space into a timed search cycle.',
+      title: 'Scent',
+      text: 'Insert a cotton scent strip with your worn clothing and the removable PCM warming disc into the separate warmth chamber. Your dog returns to familiar scent and gentle warmth between chew sessions.',
     },
     {
       num: 3,
-      title: 'Cycle',
-      text: 'Lay a path between cartridges with reusable timed-release wicks. It\'s an optional add-on for pets who enjoy a longer route and more searching.',
+      title: 'Chew',
+      text: 'Heavy duty, capsule shaped chew base with two isolated systems. Modular chambers rearrange as your dog improves.',
     },
     {
       num: 4,
       title: 'Settle',
-      text: 'Between cycles, your pet can come back to the base\'s warmth insert and mechanical pulse disc. A familiar resting point without electronics.',
+      text: 'Between cycles, your dog settles into the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.',
     },
   ];
 
@@ -112,7 +112,7 @@ export function Landing({ onRoute }) {
   bodyStrip.className = 'body-strip';
   bodyStrip.innerHTML = `
     <div class="container body-strip-container">
-      <p class="hero-body">Hide the cartridges. Set the cycle. Leave a scent behind and a warm place to return to. No batteries, Wi-Fi or live check-ins required.</p>
+      <p class="hero-body">Load the treat chamber. Insert the scent strip. Set the cycle. No batteries, Wi-Fi or live check-ins required.</p>
     </div>
   `;
 

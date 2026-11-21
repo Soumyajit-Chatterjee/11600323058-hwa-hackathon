@@ -1,4 +1,4 @@
-/* Nuzzora — reusable button */
+/* ChronoScent — reusable button */
 export function Button({ text, onClick, variant = 'primary', type = 'button', disabled = false, className = '' }) {
   const btn = document.createElement('button');
   btn.type = type;

@@ -1,4 +1,4 @@
-/* Nuzzora — Checkout page (mock behaviour) */
+/* ChronoScent — Checkout page (mock behaviour) */
 import { cart } from '../store/cart.js';
 import { Button } from '../components/Button.js';
 

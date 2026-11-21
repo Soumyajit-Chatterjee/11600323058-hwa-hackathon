@@ -1,4 +1,4 @@
-/* Nuzzora — SPA router and app entry */
+/* ChronoScent — SPA router and app entry */
 import { cart } from './store/cart.js';
 import { Header } from './components/Header.js';
 import { Footer } from './components/Footer.js';

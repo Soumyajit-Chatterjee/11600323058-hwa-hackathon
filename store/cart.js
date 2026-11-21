@@ -1,4 +1,4 @@
-/* Nuzzora — cart store (localStorage backed, mock behaviour) */
+/* ChronoScent — cart store (localStorage backed, mock behaviour) */
 const STORAGE_KEY = 'chronoscent_cart';
 
 let items = [];
