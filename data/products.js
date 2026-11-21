@@ -74,10 +74,10 @@ export const products = [
     salePrice: 2399,
     saleLabel: 'Limited time',
     originalPriceLabel: 'Ongoing discount',
-    summary: 'Chew pod for dogs beginning timed chew routines.',
+    summary: 'A dual-chamber chew pod that combines timed treat release with warmth and your scent.',
     description:
-      'Design for a capsule shaped chew base with two isolated systems: a timed treat chamber for staged food release, and a separate warmth/scent chamber with a removable PCM warming disc and cotton scent strip. A battery free enrichment design that combines chewing, delayed rewards, warmth and familiar scent. Not a medical or anti anxiety device. Not a guaranteed calming product. Real-world timing, durability, and safety require physical testing and veterinary or product safety review.',
-    shortDesc: 'Dual chamber modular chew pod for dogs left alone at home.',
+      'The ChronoScent chew base has two separate chambers that work independently. One chamber holds timed treat cartridges that release food gradually as your dog chews. The other chamber holds a removable warming disc and a cotton scent strip — you can add a piece of your worn clothing so your dog has your familiar scent while you\'re away. No batteries, no Wi-Fi, no app needed. This is a design proposal; real-world timing, durability, and safety require physical testing and veterinary review. Not a medical or anti-anxiety device.',
+    shortDesc: 'Dual-chamber chew pod with timed treats, warming disc, and scent strip for dogs home alone.',
     includes: [
       '1 ChronoScent chew base',
       '1 PCM warming disc',
