@@ -1764,6 +1764,10 @@ button {
   color: var(--color-text-light);
 }
 
+.materials-strip .section-title {
+  color: var(--color-text-light);
+}
+
 .materials-safety-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
