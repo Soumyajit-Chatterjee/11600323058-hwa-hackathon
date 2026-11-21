@@ -56,9 +56,6 @@ export function ProductDetail({ id, onRoute }) {
         <h3 class="pick-materials">Materials</h3>
         <ul class="materials-list"></ul>
 
-        <h3 class="pick-suitability">Suitable for</h3>
-        <div class="suitability-list"></div>
-
         <h3 class="pick-size">Pick your size</h3>
         <div class="size-selector" aria-label="Size" role="radiogroup"></div>
 
@@ -88,6 +85,64 @@ export function ProductDetail({ id, onRoute }) {
           <h4>Safety &amp; care</h4>
           <p>${product.safetyNotes}</p>
         </div>
+
+        <!-- Detailed product explainer sections -->
+        ${product.details ? `
+        <div class="product-details">
+          <h2 class="section-title">Product details</h2>
+
+          <div class="detail-section card">
+            <h3 class="card-title">Chew resistant outer body</h3>
+            <p class="card-desc">${product.details.outerBody}</p>
+          </div>
+
+          <div class="detail-section card">
+            <h3 class="card-title">Chrono-Treat chamber</h3>
+            <p class="card-desc">${product.details.treatChamber}</p>
+          </div>
+
+          <div class="detail-section card">
+            <h3 class="card-title">Thermo-Scent core</h3>
+            <p class="card-desc">${product.details.scentCore}</p>
+          </div>
+
+          <div class="detail-section card">
+            <h3 class="card-title">Two isolated chambers</h3>
+            <p class="card-desc">${product.details.isolation}</p>
+          </div>
+
+          <div class="detail-section card">
+            <h3 class="card-title">How to prepare before you leave</h3>
+            <p class="card-desc">${product.details.preparation}</p>
+          </div>
+
+          <div class="detail-section card">
+            <h3 class="card-title">Your dog’s experience over time</h3>
+            <p class="card-desc">${product.details.experience}</p>
+          </div>
+
+          <div class="detail-section card">
+            <h3 class="card-title">Refill items available</h3>
+            <p class="card-desc">${product.details.refillItems}</p>
+          </div>
+
+          <div class="detail-section card">
+            <h3 class="card-title">Cartridge formulations</h3>
+            <p class="card-desc">${product.details.cartridgeFormulations}</p>
+          </div>
+        </div>
+
+        <div class="product-safety-panel card">
+          <h3 class="card-title">Important safety information</h3>
+          <ul class="safety-list">
+            <li>ChronoScent is a concept product. Introduce it to your dog under supervision during the first few sessions.</li>
+            <li>Inspect the base, cartridges, warming disc, and scent strip before every use.</li>
+            <li>Replace any component that shows tears, cracks, or damage immediately.</li>
+            <li>Base your choice of Standard or Endurance cartridges on your own dog’s chewing behaviour and strength.</li>
+            <li>Microwave heating, edible barriers, and locking mechanisms are not certified until independently verified.</li>
+          </ul>
+        </div>
+        ` : ''}
       </div>
     </div>
   `;
@@ -162,17 +217,19 @@ export function ProductDetail({ id, onRoute }) {
 
   // Suitability list
   const suitabilityList = section.querySelector('.suitability-list');
-  product.suitability.forEach((s) => {
-    const item = document.createElement('div');
-    item.className = 'suitability-item';
-    const strong = document.createElement('strong');
-    strong.textContent = s.label;
-    const p = document.createElement('p');
-    p.textContent = s.detail;
-    item.appendChild(strong);
-    item.appendChild(p);
-    suitabilityList.appendChild(item);
-  });
+  if (suitabilityList) {
+    product.suitability.forEach((s) => {
+      const item = document.createElement('div');
+      item.className = 'suitability-item';
+      const strong = document.createElement('strong');
+      strong.textContent = s.label;
+      const p = document.createElement('p');
+      p.textContent = s.detail;
+      item.appendChild(strong);
+      item.appendChild(p);
+      suitabilityList.appendChild(item);
+    });
+  }
 
   // Includes list
   product.includes.forEach((item) => {

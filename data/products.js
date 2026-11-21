@@ -47,7 +47,17 @@ export const products = [
       gallerySrc: 'assets/Product_Page_StarterKit_420x560.jpg'
     },
     safetyNotes:
-      'Check the base and cartridges during initial sessions to make sure your dog does not tear, swallow, or aggressively chew any part. Remove damaged components and follow your veterinarian’s advice for your dog’s chewing habits. The scent strip and PCM disc are not for chewing or ingestion.'
+      'Check the base and cartridges during initial sessions to make sure your dog does not tear, swallow, or aggressively chew any part. Remove damaged components and follow your veterinarian’s advice for your dog’s chewing habits. The scent strip and PCM disc are not for chewing or ingestion.',
+    details: {
+      outerBody: 'Heavy duty chew resistant outer body made of food grade rubber or TPR. The surface has raised tactile zones — ridges and dimples — that give your dog varied chewing resistance and sensory feedback without breaking apart.',
+      treatChamber: 'The Chrono-Treat chamber is a sealed, isolated compartment that holds timed treat cartridges. It releases food in stages over time, so your dog works for rewards gradually instead of all at once. Cartridges are replaceable when empty.',
+      scentCore: 'The Thermo-Scent core is the second isolated system. It holds a removable PCM warming disc and a cotton scent strip. You place a piece of your worn clothing on the strip so your dog has familiar scent between chew sessions.',
+      isolation: 'The two chambers are physically separated inside the base. Treats cannot reach the scent core, and the warming disc cannot contact food. Each chamber opens independently so you can refill the treat cartridge or swap the scent strip without disturbing the other system.',
+      preparation: 'Before you leave, load a timed treat cartridge into the treat chamber, insert a cotton scent strip with your worn clothing into the scent chamber, and place the PCM warming disc in its slot. Close both chambers securely. Your dog can then chew, scent, and settle on its own.',
+      experience: 'Early: your dog discovers the chew base and the first treat release. Middle: scent strip and warming disc provide a familiar resting point between chew sessions. Later: staged treat release and rearrangeable chambers keep the experience fresh as your dog improves.',
+      refillItems: 'The Scent Refill Pack includes 8 timed treat cartridges and 4 cotton scent strips. It works with both Small / Medium and Large base sizes.',
+      cartridgeFormulations: 'Standard cartridges suit light and moderate chewers. Endurance cartridges are denser and made for heavy chewers who wear through standard cartridges faster. Match the formulation to your dog’s chewing strength.'
+    }
   },
   {
     id: 'refill',
