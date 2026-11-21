@@ -1655,8 +1655,8 @@ button {
 
 .chambers-strip {
   padding: 56px 0;
-  background: var(--color-dark);
-  color: var(--color-text-light);
+  background: #fff4e8;
+  color: var(--color-text-dark);
 }
 
 .chambers-overview {
@@ -1670,9 +1670,9 @@ button {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 1px solid rgba(253, 255, 252, 0.22);
+  border: 1px solid var(--color-accent);
   border-radius: var(--radius);
-  background: #f4f4f0;
+  background: var(--color-surface);
 }
 
 .chamber-feature-image img {
@@ -1688,19 +1688,19 @@ button {
 }
 
 .chamber-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(253, 255, 252, 0.15);
+  background: var(--color-surface);
+  border: 1px solid var(--color-accent);
   border-radius: var(--radius);
   padding: 24px 20px;
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
 }
 
 .chamber-card .card-title {
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
 }
 
 .chamber-card .card-desc {
-  color: #d8d8d8;
+  color: #444;
 }
 
 .chamber-image {
@@ -1710,9 +1710,9 @@ button {
   justify-content: center;
   overflow: hidden;
   margin: -8px -4px 16px;
-  border: 1px solid rgba(253, 255, 252, 0.15);
+  border: 1px solid var(--color-accent);
   border-radius: 10px;
-  background: #f4f4f0;
+  background: var(--color-surface);
 }
 
 .chamber-image img {
