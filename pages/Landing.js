@@ -1,4 +1,4 @@
-/* Nuzzora — Landing page (hero + how it works + size guidance preview) */
+/* Nuzzora — Landing page (hero + how it works + strips) */
 import { PlaceholderImg } from '../components/PlaceholderImg.js';
 import { Button } from '../components/Button.js';
 
@@ -6,7 +6,7 @@ export function Landing({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page landing';
 
-  // --- Hero: headline + visual only ---
+  // --- Hero: badge + headline + buttons + visual ---
   const hero = document.createElement('section');
   hero.className = 'hero';
   hero.innerHTML = `
@@ -50,7 +50,7 @@ export function Landing({ onRoute }) {
   );
   visual.appendChild(heroImg);
 
-  // --- Subheading strip ---
+  // --- Subheading strip (darker background) ---
   const subheadingStrip = document.createElement('section');
   subheadingStrip.className = 'subheading-strip';
   subheadingStrip.innerHTML = `
@@ -59,7 +59,7 @@ export function Landing({ onRoute }) {
     </div>
   `;
 
-  // --- How it works ---
+  // --- How it works: title + steps grid ---
   const how = document.createElement('section');
   how.id = 'how-it-works';
   how.className = 'how-it-works';
@@ -68,7 +68,6 @@ export function Landing({ onRoute }) {
       <header class="section-header">
         <h2 class="section-title">How it works</h2>
       </header>
-      <p class="hero-body">Hide the pods. Set the puzzle. Leave a scent behind and a warm place to return to. No batteries, Wi-Fi or live check-ins required.</p>
       <div class="steps-grid"></div>
     </div>
   `;
@@ -108,9 +107,19 @@ export function Landing({ onRoute }) {
     grid.appendChild(step);
   });
 
+  // --- Body text strip (below how-it-works points, above footer) ---
+  const bodyStrip = document.createElement('section');
+  bodyStrip.className = 'body-strip';
+  bodyStrip.innerHTML = `
+    <div class="container body-strip-container">
+      <p class="hero-body">Hide the pods. Set the puzzle. Leave a scent behind and a warm place to return to. No batteries, Wi-Fi or live check-ins required.</p>
+    </div>
+  `;
+
   section.appendChild(hero);
   section.appendChild(subheadingStrip);
   section.appendChild(how);
+  section.appendChild(bodyStrip);
 
   return { el: section };
 }

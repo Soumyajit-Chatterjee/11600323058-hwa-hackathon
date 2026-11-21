@@ -267,7 +267,7 @@ button {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 72px 0 56px;
+  padding: 80px 0 64px;
   background: var(--color-dark);
   color: var(--color-text-light);
 }
@@ -290,7 +290,7 @@ button {
   padding: 6px 14px;
   border-radius: 20px;
   border: 1px solid rgba(255, 159, 28, 0.35);
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .hero-headline {
@@ -298,27 +298,14 @@ button {
   font-weight: 900;
   line-height: 1.15;
   color: var(--color-text-light);
-  margin-bottom: 16px;
-}
-
-.hero-subheading {
-  font-size: 1.15rem;
-  color: var(--color-secondary);
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.hero-body {
-  font-size: 1rem;
-  color: #e8e8dc;
-  margin-bottom: 28px;
-  max-width: 440px;
+  margin-bottom: 32px;
 }
 
 .hero-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 32px;
 }
 
 .hero-visual {
@@ -362,9 +349,9 @@ button {
 
 /* ---------- Subheading strip ---------- */
 .subheading-strip {
-  padding: 24px 0;
-  background: #f7f7f0;
-  border-bottom: 1px solid var(--color-border);
+  padding: 40px 0;
+  background: var(--color-dark);
+  color: var(--color-text-light);
 }
 
 .subheading-container {
@@ -373,9 +360,29 @@ button {
 
 .hero-subheading {
   font-size: 1.1rem;
-  color: var(--color-secondary);
+  color: var(--color-text-light);
   font-weight: 600;
   margin: 0;
+}
+
+/* ---------- Body text strip ---------- */
+.body-strip {
+  padding: 48px 0;
+  background: #f7f7f0;
+  border-top: 1px solid var(--color-border);
+}
+
+.body-strip-container {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-body {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.7;
 }
 
 /* ---------- Section headers ---------- */
