@@ -5,6 +5,7 @@ import { Button } from '../components/Button.js';
 export function Checkout({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page checkout';
+  section.style.padding = '72px 0 64px';
 
   const items = cart.getItems();
   if (items.length === 0) {
@@ -94,12 +95,24 @@ export function Checkout({ onRoute }) {
     const phone = section.querySelector('#checkout-phone').value.trim();
     const address = section.querySelector('#checkout-address').value.trim();
 
+    // Name: min 3 chars, max per longest recorded name (255 covers any real name)
     if (!name) return showFieldError('checkout-name', 'Please enter your full name.');
+    if (name.length < 3) return showFieldError('checkout-name', 'Name must be at least 3 characters long.');
+    if (name.length > 255) return showFieldError('checkout-name', 'Name is too long.');
+
+    // Email: valid format
     if (!email) return showFieldError('checkout-email', 'Please enter your email address.');
     const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRe.test(email)) return showFieldError('checkout-email', 'Please enter a valid email address.');
+
+    // Phone: exactly 10 digits for India
     if (!phone) return showFieldError('checkout-phone', 'Please enter your phone number.');
+    const phoneRe = /^[6-9]\d{9}$/;
+    if (!phoneRe.test(phone)) return showFieldError('checkout-phone', 'Please enter a valid 10-digit Indian mobile number.');
+
+    // Address: at least 10 characters
     if (!address) return showFieldError('checkout-address', 'Please enter your address.');
+    if (address.length < 10) return showFieldError('checkout-address', 'Address must be at least 10 characters long.');
 
     errorEl.textContent = '';
     return true;

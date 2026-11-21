@@ -6,6 +6,7 @@ import { PlaceholderImg } from '../components/PlaceholderImg.js';
 export function Shop({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page shop';
+  section.style.padding = '72px 0 48px';
 
   section.innerHTML = `
     <div class="container">

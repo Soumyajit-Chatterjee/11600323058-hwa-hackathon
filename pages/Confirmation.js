@@ -4,6 +4,7 @@ import { Button } from '../components/Button.js';
 export function Confirmation({ orderId, onRoute }) {
   const section = document.createElement('div');
   section.className = 'page confirmation';
+  section.style.padding = '72px 0 64px';
 
   let order = null;
   try {

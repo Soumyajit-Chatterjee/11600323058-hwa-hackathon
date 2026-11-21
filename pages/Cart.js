@@ -6,6 +6,7 @@ import { PlaceholderImg } from '../components/PlaceholderImg.js';
 export function Cart({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page cart';
+  section.style.padding = '72px 0 64px';
 
   function render() {
     const items = cart.getItems();

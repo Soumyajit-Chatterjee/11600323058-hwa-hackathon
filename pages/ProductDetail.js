@@ -8,6 +8,7 @@ export function ProductDetail({ id, onRoute }) {
   const product = getProduct(id);
   const section = document.createElement('div');
   section.className = 'page product-detail';
+  section.style.padding = '72px 0 64px';
 
   if (!product) {
     section.innerHTML = `

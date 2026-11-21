@@ -13,11 +13,12 @@ export function Header({ onRoute }) {
       </button>
       <a href="#/" class="brand" data-link>Nuzzora</a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#/" class="nav-link" data-link>Landing</a>
+        <a href="#/" class="nav-link" data-link>Home</a>
         <a href="#/shop" class="nav-link" data-link>Shop</a>
+        <a href="#/faq" class="nav-link" data-link>FAQ</a>
+        <a href="#/contact" class="nav-link" data-link>Contact Us</a>
         <a href="#/cart" class="nav-link cart-link" data-link>Cart <span class="cart-count">0</span></a>
       </nav>
-      <a href="#/shop" class="btn btn--outline" data-link>Shop</a>
     </div>
   `;
 

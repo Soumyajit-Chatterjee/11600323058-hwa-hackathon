@@ -7,6 +7,50 @@
    Accent    : #ff9f1c  (orange)
    Text      : black / white
 */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('static/BricolageGrotesque-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('static/BricolageGrotesque-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('static/BricolageGrotesque-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('static/BricolageGrotesque-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('static/BricolageGrotesque-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-primary: #f71735;
   --color-secondary: #41ead4;
@@ -38,11 +82,13 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--color-bg);
   color: var(--color-text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -83,7 +129,6 @@ button {
   position: sticky;
   top: 0;
   background: var(--color-dark);
-  border-bottom: 1px solid rgba(253, 255, 252, 0.15);
   z-index: 50;
 }
 
@@ -177,19 +222,21 @@ button {
   cursor: not-allowed;
 }
 
-/* cart badge */
+/* cart badge — sleek centered circle */
 .cart-count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background: var(--color-primary);
   color: var(--color-text-light);
-  border-radius: 10px;
+  border-radius: 50%;
   font-size: 0.75rem;
   font-weight: 800;
   margin-left: 6px;
+  line-height: 1;
+}
 }
 
 /* Mobile menu toggle */
@@ -235,7 +282,6 @@ button {
 /* ---------- Pages ---------- */
 .page {
   min-height: 60vh;
-  padding: 40px 0;
 }
 
 /* ---------- Hero ---------- */

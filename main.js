@@ -6,6 +6,8 @@ import { Landing } from './pages/Landing.js';
 import { Shop } from './pages/Shop.js';
 import { ProductDetail } from './pages/ProductDetail.js';
 import { Cart } from './pages/Cart.js';
+import { FAQ } from './pages/FAQ.js';
+import { Contact } from './pages/Contact.js';
 import { Checkout } from './pages/Checkout.js';
 import { Confirmation } from './pages/Confirmation.js';
 
@@ -57,6 +59,8 @@ const routes = [
   { path: /^#\/shop$/, page: Shop, title: 'Shop' },
   { path: /^#\/product\/([a-z0-9-]+)$/, page: ProductDetail, title: 'Product' },
   { path: /^#\/cart$/, page: Cart, title: 'Cart' },
+  { path: /^#\/faq$/, page: FAQ, title: 'FAQ' },
+  { path: /^#\/contact$/, page: Contact, title: 'Contact Us' },
   { path: /^#\/checkout$/, page: Checkout, title: 'Checkout' },
   { path: /^#\/confirmation\/([A-Za-z0-9]+)$/, page: Confirmation, title: 'Confirmation' },
 ];
