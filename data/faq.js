@@ -1,31 +1,35 @@
-/* Nuzzora — FAQ content (space for 5-10 questions) */
+/* Nuzzora — FAQ content */
 export const faqs = [
   {
-    q: 'Is Nuzzora electronic?',
-    a: 'No. Nuzzora is purely mechanical — no batteries, no Wi-Fi, no app, and no live check-ins.',
+    q: 'What is Nuzzora made from?',
+    a: 'The Den uses durable, food-safe HDPE. The pods use washable ripstop fabric and fleece, with securely stitched seams and a concealed zip pocket.',
   },
   {
-    q: 'How does the ratchet release work?',
-    a: 'Treats do not drop every single time. The ratchet makes each attempt unpredictable, so the dog keeps searching instead of solving once and stopping.',
+    q: 'Is the Den dishwasher safe?',
+    a: 'The hard Den base is dishwasher safe on the top rack. Remove the scent pods, warmth insert, and pulse disc before washing.',
   },
   {
-    q: 'Can I wash the scent pods?',
-    a: 'Yes. The pods are washable and each has a zip pocket for a piece of your worn clothing plus a treat cavity.',
+    q: 'Does it use batteries, Wi-Fi, or an app?',
+    a: 'No. The Den works mechanically, and the warmth insert and pulse disc require no app, battery, or internet connection.',
   },
   {
-    q: 'Are the scent sachets optional?',
-    a: 'Yes. The reusable scent-wax sachets are an optional add-on for dogs that enjoy a longer trail and more searching.',
+    q: 'How long does training take?',
+    a: 'Many dogs can start with treats visible in the easiest chambers. Begin with short supervised sessions, then increase the difficulty as your dog learns the search pattern.',
   },
   {
-    q: 'Which size should I choose?',
-    a: 'Small / Medium fits toy, small and medium breeds. Large fits large and giant breeds, with larger chambers and pod capacity.',
+    q: 'Can two dogs use it together?',
+    a: 'Yes, but introduce it with supervision. For households with dogs that guard food, use separate areas or provide one Den per dog.',
   },
   {
-    q: 'Does it need a power outlet or app?',
-    a: 'No. There are no batteries, no Wi-Fi, and no harmful electricity exposure. The warmth insert and pulse disc are purely mechanical.',
+    q: 'What if my dog is not food motivated?',
+    a: 'Use a favourite toy, safe chew, or a small amount of a high-value reward instead of ordinary treats. The scent search and owner-scent pocket can also provide interest without relying entirely on food.',
   },
   {
-    q: 'Can I add more pods later?',
-    a: 'Yes. The Trail Refill Pack includes replaceable scent pods and works with both den sizes.',
+    q: 'Is it safe to leave my dog alone with it?',
+    a: 'Check the Den and pods during initial sessions to make sure your dog does not tear, swallow, or aggressively chew any part. Remove damaged components and follow your veterinarian’s advice for your dog’s chewing habits.',
+  },
+  {
+    q: 'Is the scent wax safe?',
+    a: 'Use only the supplied pet-safe wax and keep sachets enclosed or out of reach. They are for laying a light trail, not for chewing or ingestion.',
   },
 ];
