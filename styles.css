@@ -188,6 +188,11 @@ button {
   background: #d60a2c;
 }
 
+.btn--primary:active {
+  background: #b00723;
+  transform: translateY(1px);
+}
+
 .btn--secondary {
   background: var(--color-secondary);
   color: var(--color-dark);
@@ -900,10 +905,16 @@ button {
 }
 
 .feedback {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #1a7a4e;
+  font-weight: 700;
   margin-top: 10px;
   min-height: 1.2em;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #e8f5ec;
+  border: 1px solid #b7e4c7;
+  display: inline-block;
 }
 
 .error-msg {
