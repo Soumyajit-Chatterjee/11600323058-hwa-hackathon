@@ -37,6 +37,7 @@ export function ProductCard({ product, onSelect }) {
       h: product.image.h,
       desc: product.image.desc,
       className: 'card-placeholder',
+      src: product.image.src,
     })
   );
 
