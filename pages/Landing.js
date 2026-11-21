@@ -18,9 +18,9 @@ export function Landing({ onRoute }) {
   hero.innerHTML = `
     <div class="container hero-inner">
       <div class="hero-content">
-        <span class="badge">Purely mechanical · No batteries · No Wi-Fi</span>
-        <h1 class="hero-headline">ChronoScent — a dual-chamber chew pod for dogs left at home</h1>
-        <p class="hero-body">Keeps your dog engaged through chew, scent, warmth, and delayed reward — no Wi-Fi, batteries, cameras, or owner interaction needed after setup.</p>
+        <span class="badge">Concept · No batteries · No Wi-Fi</span>
+        <h1 class="hero-headline">ChronoScent — a dual-chamber chew pod concept for dogs left at home</h1>
+        <p class="hero-body">Designed to engage your dog through chew, scent, warmth, and delayed reward — no Wi-Fi, batteries, cameras, or owner interaction needed after setup. Concept product — real-world timing, durability, and safety require physical testing and veterinary review.</p>
         <div class="hero-actions"></div>
       </div>
       <div class="hero-visual"></div>
@@ -46,7 +46,7 @@ export function Landing({ onRoute }) {
     PlaceholderImg({
       w: 500,
       h: 520,
-      desc: 'ChronoScent dual-chamber chew base: rugged moulded rubber with tactile ridges, removable PCM warming disc, cotton scent strips, and edible treat cartridges',
+      desc: 'ChronoScent dual-chamber chew base concept: rugged moulded rubber with tactile ridges, removable PCM warming disc, cotton scent strips, and edible treat cartridges',
       src: 'assets/Home_Page_Main_Image_500x520.webp',
       fallbackSrc: 'assets/Home_Page_Main_Image_500x520.png',
       srcSet: 'assets/Home_Page_Main_Image_380x396.webp 380w, assets/Home_Page_Main_Image_500x520.webp 500w',
@@ -75,7 +75,7 @@ export function Landing({ onRoute }) {
         <header class="why-header">
           <h2 class="section-title">Why ordinary single stage toys lose attention</h2>
         </header>
-        <p class="hero-body">Single stage chew toys offer one experience: a dog chews, the treat is gone, and the toy is done. Once solved, there is nothing left to return to, so interest fades quickly.</p>
+        <p class="hero-body">Concept: single stage chew toys offer one experience — a dog chews, the treat is gone, and the toy is done. Once solved, there is nothing left to return to, so interest fades quickly.</p>
       </div>
     </div>
   `;
@@ -88,7 +88,7 @@ export function Landing({ onRoute }) {
     <div class="container">
       <header class="section-header page-header">
         <h2 class="section-title">How ChronoScent works</h2>
-        <p class="section-intro">A sequence of chew, scent, warmth, and delayed reward keeps your dog engaged over time.</p>
+        <p class="section-intro">A concept sequence of chew, scent, warmth, and delayed reward intended to keep your dog engaged over time.</p>
       </header>
       <div class="steps-grid"></div>
     </div>
@@ -98,22 +98,22 @@ export function Landing({ onRoute }) {
     {
       num: 1,
       title: 'Load',
-      text: 'Load the timed treat chamber. The staged release mechanism dispenses food over time without batteries or app control.'
+      text: 'Concept: load the timed treat chamber. The staged release mechanism is intended to dispense food over time without batteries or app control.'
     },
     {
       num: 2,
       title: 'Scent',
-      text: 'Insert a cotton scent strip with your worn clothing into the separate warmth chamber. Familiar scent is there between chew sessions.'
+      text: 'Concept: insert a cotton scent strip with your worn clothing into the separate warmth chamber. Familiar scent intended to be there between chew sessions.'
     },
     {
       num: 3,
       title: 'Chew',
-      text: 'Heavy duty capsule shaped chew pod with two isolated chambers. Modular chambers rearrange as your dog improves.'
+      text: 'Concept: heavy duty capsule shaped chew pod with two isolated chambers. Modular chambers rearrange as your dog improves.'
     },
     {
       num: 4,
       title: 'Settle',
-      text: 'Between cycles, your dog returns to the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.'
+      text: 'Concept: between cycles, your dog returns to the removable PCM warming disc and cotton scent strip. A familiar resting point without electronics.'
     }
   ];
 
@@ -140,11 +140,11 @@ export function Landing({ onRoute }) {
       <div class="chambers-grid">
         <div class="chamber-card card">
           <h3 class="card-title">Timed treat chamber</h3>
-          <p class="card-desc">Staged food release keeps your dog working for rewards over time. Edible treat cartridges are replaceable.</p>
+          <p class="card-desc">Concept: staged food release intended to keep your dog working for rewards over time. Edible treat cartridges are replaceable.</p>
         </div>
         <div class="chamber-card card">
           <h3 class="card-title">Warmth & scent chamber</h3>
-          <p class="card-desc">Removable PCM warming disc and cotton scent strip hold your scent. Your dog returns to warmth and familiarity between chews.</p>
+          <p class="card-desc">Concept: removable PCM warming disc and cotton scent strip hold your scent. Your dog returns to warmth and familiarity between chews.</p>
         </div>
       </div>
     </div>
@@ -161,15 +161,15 @@ export function Landing({ onRoute }) {
       <div class="timeline-grid">
         <div class="timeline-item card">
           <h3 class="card-title">Early</h3>
-          <p class="card-desc">Your dog discovers the chew base and first treat release.</p>
+          <p class="card-desc">Concept: your dog discovers the chew base and first treat release.</p>
         </div>
         <div class="timeline-item card">
           <h3 class="card-title">Middle</h3>
-          <p class="card-desc">Scent strip and warming disc provide a familiar resting point between chew sessions.</p>
+          <p class="card-desc">Concept: scent strip and warming disc provide a familiar resting point between chew sessions.</p>
         </div>
         <div class="timeline-item card">
           <h3 class="card-title">Later</h3>
-          <p class="card-desc">Staged treat release and rearrangeable chambers keep the experience fresh as your dog improves.</p>
+          <p class="card-desc">Concept: staged treat release and rearrangeable chambers intended to keep the experience fresh as your dog improves.</p>
         </div>
       </div>
     </div>
@@ -281,7 +281,7 @@ export function Landing({ onRoute }) {
     <div class="container">
       <div class="cta-content card">
         <h2 class="section-title">Ready to try ChronoScent?</h2>
-        <p class="hero-body">Choose the Starter Kit or subscribe to the Refill Pack. No batteries, Wi-Fi, or app required.</p>
+        <p class="hero-body">Choose the Starter Kit or subscribe to the Refill Pack. No batteries, Wi-Fi, or app required. Concept product — real-world timing, durability, and safety require physical testing and veterinary review.</p>
         <div class="cta-actions"></div>
       </div>
     </div>
