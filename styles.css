@@ -1842,6 +1842,10 @@ button {
   color: var(--color-text-light);
 }
 
+.cta-strip .section-title {
+  color: var(--color-accent);
+}
+
 .cta-content {
   max-width: 700px;
   margin: 0 auto;
