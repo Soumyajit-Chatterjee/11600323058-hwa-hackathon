@@ -42,7 +42,12 @@ export function Landing({ onRoute }) {
       w: 500,
       h: 520,
       desc: 'Nuzzora base den, scent pods, and trail sachets arranged together',
-      src: 'assets/Home_Page_Main_Image_500x520.png',
+      src: 'assets/Home_Page_Main_Image_500x520.webp',
+      fallbackSrc: 'assets/Home_Page_Main_Image_500x520.png',
+      srcSet: 'assets/Home_Page_Main_Image_380x396.webp 380w, assets/Home_Page_Main_Image_500x520.webp 500w',
+      sizes: '(max-width: 768px) 100vw, 380px',
+      loading: 'eager',
+      decoding: 'sync',
     })
   );
   visual.appendChild(heroImg);

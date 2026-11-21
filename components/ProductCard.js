@@ -38,6 +38,11 @@ export function ProductCard({ product, onSelect }) {
       desc: product.image.desc,
       className: 'card-placeholder',
       src: product.image.src,
+      fallbackSrc: product.image.fallbackSrc,
+      srcSet: `${product.image.src.replace('.webp', '_400x400.webp')} 400w, ${product.image.src} 500w`,
+      sizes: '(max-width: 768px) 100vw, 33vw',
+      loading: 'lazy',
+      decoding: 'async',
     })
   );
 
