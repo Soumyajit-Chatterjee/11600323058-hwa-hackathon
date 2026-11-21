@@ -6,7 +6,7 @@ export function Landing({ onRoute }) {
   const section = document.createElement('div');
   section.className = 'page landing';
 
-  // --- Hero ---
+  // --- Hero: headline + visual only ---
   const hero = document.createElement('section');
   hero.className = 'hero';
   hero.innerHTML = `
@@ -14,8 +14,6 @@ export function Landing({ onRoute }) {
       <div class="hero-content">
         <span class="badge">Purely mechanical · No batteries · No Wi-Fi</span>
         <h1 class="hero-headline">A whole house adventure with a little bit of you at the center</h1>
-        <p class="hero-subheading">Nuzzora keeps dogs searching, solving and settling while their people are away.</p>
-        <p class="hero-body">Hide the pods. Set the puzzle. Leave a scent behind and a warm place to return to. No batteries, Wi-Fi or live check-ins required.</p>
         <div class="hero-actions"></div>
       </div>
       <div class="hero-visual"></div>
@@ -52,6 +50,15 @@ export function Landing({ onRoute }) {
   );
   visual.appendChild(heroImg);
 
+  // --- Subheading strip ---
+  const subheadingStrip = document.createElement('section');
+  subheadingStrip.className = 'subheading-strip';
+  subheadingStrip.innerHTML = `
+    <div class="container subheading-container">
+      <p class="hero-subheading">Nuzzora keeps dogs searching, solving and settling while their people are away.</p>
+    </div>
+  `;
+
   // --- How it works ---
   const how = document.createElement('section');
   how.id = 'how-it-works';
@@ -60,8 +67,8 @@ export function Landing({ onRoute }) {
     <div class="container">
       <header class="section-header">
         <h2 class="section-title">How it works</h2>
-        <p class="section-intro">Three parts, one game that moves through your whole house.</p>
       </header>
+      <p class="hero-body">Hide the pods. Set the puzzle. Leave a scent behind and a warm place to return to. No batteries, Wi-Fi or live check-ins required.</p>
       <div class="steps-grid"></div>
     </div>
   `;
@@ -102,6 +109,7 @@ export function Landing({ onRoute }) {
   });
 
   section.appendChild(hero);
+  section.appendChild(subheadingStrip);
   section.appendChild(how);
 
   return { el: section };

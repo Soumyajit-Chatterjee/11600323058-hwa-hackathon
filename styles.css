@@ -360,6 +360,24 @@ button {
   margin-right: auto;
 }
 
+/* ---------- Subheading strip ---------- */
+.subheading-strip {
+  padding: 24px 0;
+  background: #f7f7f0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.subheading-container {
+  text-align: center;
+}
+
+.hero-subheading {
+  font-size: 1.1rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin: 0;
+}
+
 /* ---------- Section headers ---------- */
 .section-header {
   text-align: center;
