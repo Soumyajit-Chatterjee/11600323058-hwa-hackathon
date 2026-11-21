@@ -6,15 +6,14 @@ export function PlaceholderImg({ w, h, desc, className = '', src }) {
     img.src = src;
     img.alt = desc || 'Product image';
     img.className = className; // no placeholder-img class on real images
-    img.style.width = `${w}px`;
-    img.style.height = `${h}px`;
-    img.style.minHeight = `${h}px`;
     img.style.objectFit = 'contain';
     img.style.borderRadius = '0';
     img.style.border = 'none';
     img.style.background = 'transparent';
     img.style.display = 'block';
     img.style.margin = '0 auto';
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = '100%';
     return img;
   }
 
