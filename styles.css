@@ -719,20 +719,20 @@ button {
 }
 
 .size-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .size-btn.size--active,
 .size-btn[aria-checked="true"] {
-  background: var(--color-primary);
-  color: var(--color-text-light);
-  border-color: var(--color-primary);
+  background: var(--color-accent);
+  color: var(--color-text-dark);
+  border-color: var(--color-accent);
 }
 
 .size-btn.size--active .size-detail,
 .size-btn[aria-checked="true"] .size-detail {
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
 }
 
 .size-detail {
