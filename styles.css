@@ -1018,6 +1018,10 @@ button {
   border-top: 1px solid var(--color-border);
 }
 
+#place-order {
+  margin-bottom: 24px;
+}
+
 .order-review {
   background: #f7f7f0;
   border: 1px solid var(--color-border);
