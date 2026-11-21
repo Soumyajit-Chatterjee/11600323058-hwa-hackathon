@@ -988,9 +988,23 @@ ul, ol {
 
 /* ---------- CTA ---------- */
 .cta-strip {
+  position: relative;
   background:
     radial-gradient(900px 420px at 50% -20%, rgba(255, 159, 28, 0.22), transparent 66%),
     var(--color-dark);
+}
+
+.cta-strip::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 159, 28, 0.4), transparent);
+  border-radius: 1px;
 }
 
 .cta-content {
